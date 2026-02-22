@@ -1,5 +1,5 @@
 ---
-About
+title: About
 ---
 
 Under construction.
