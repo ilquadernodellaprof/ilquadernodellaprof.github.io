@@ -28,10 +28,18 @@ h1, h2, h3, h4, h5, h6 {
   color: #7a9e7e;
 }
 
-a {
-  color: #8db85a;
+a[href*="2026-2b"] {
+  color: #2c4a7c;
 }
 
-a:visited {
-  color: #6a9040;
+a[href*="2026-2b"]:visited {
+  color: #1e3357;
+}
+
+a[href*="2026-2e"] {
+  color: #6b4c8a;
+}
+
+a[href*="2026-2e"]:visited {
+  color: #4e3666;
 }
