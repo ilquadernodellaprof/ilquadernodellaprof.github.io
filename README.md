@@ -1,5 +1,3 @@
-# Ehi! Hai aperto il quaderno della prof!
-
 #### Questo sito raccoglie alcuni appunti e le dispense che preparo per i miei alunni.
 
 ## Scegli la tua classe:
