@@ -1,0 +1,138 @@
+---
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Il Quaderno della Prof</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" href="https://ilquadernodellaprof.github.io/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#7a9e7e">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #fdfaf5;
+      font-family: Georgia, serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    img.duck {
+      width: 120px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      color: #7a9e7e;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #2d2d2d;
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+    }
+
+    .bottoni {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 3rem;
+    }
+
+    .bottone {
+      display: block;
+      padding: 1.5rem;
+      border-radius: 16px;
+      text-decoration: none;
+      font-family: Georgia, serif;
+      transition: transform 0.1s, opacity 0.1s;
+    }
+
+    .bottone:active {
+      transform: scale(0.97);
+      opacity: 0.85;
+    }
+
+    .bottone .lettera {
+      display: block;
+      font-size: 3.5rem;
+      font-weight: bold;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .bottone .nome {
+      display: block;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .bottone-2b {
+      background-color: #2c4a7c;
+      color: #fdfaf5;
+    }
+
+    .bottone-2e {
+      background-color: #6b4c8a;
+      color: #fdfaf5;
+    }
+
+    footer {
+      color: #888;
+      font-size: 0.75rem;
+      max-width: 500px;
+      line-height: 1.5;
+    }
+
+    footer a {
+      color: #7a9e7e;
+    }
+  </style>
+</head>
+<body>
+
+  <img class="duck" src="https://ilquadernodellaprof.github.io/assets/icons/icon-512.png" alt="Paperella">
+
+  <h1>Ehi! Hai aperto il quaderno della prof!</h1>
+
+  <p>Qui trovi gli appunti e le dispense che preparo per i miei alunni. Scegli la tua classe:</p>
+
+  <div class="bottoni">
+    <a class="bottone bottone-2b" href="https://ilquadernodellaprof.github.io/2026-2b">
+      <span class="lettera">2B</span>
+      <span class="nome">Italiano</span>
+    </a>
+    <a class="bottone bottone-2e" href="https://ilquadernodellaprof.github.io/2026-2e">
+      <span class="lettera">2E</span>
+      <span class="nome">Italiano · Storia · Geografia</span>
+    </a>
+  </div>
+
+  <footer>
+    Questo sito è creato e gestito da Lucia Capurri. I contenuti si intendono liberamente disponibili con licenza CC-BY-NC, a scopo didattico.<br>
+    Icona di <a href="https://twitter.com/abbpandalyn?ref=svgrepo.com">Yan Liu</a> via <a href="https://www.svgrepo.com/">SVG Repo</a> - licenza CC Attribution.
+  </footer>
+
+</body>
+</html>
