@@ -4,7 +4,3 @@
 
 ### - [Classe 2B](https://ilquadernodellaprof.github.io/2026-2b)
 ### - [Classe 2E](https://ilquadernodellaprof.github.io/2026-2e)
-
-
-
-###### Questo sito è creato e gestito da Lucia Capurri e i contenuti presenti si intendono liberamente disponibili con licenza CC-BY-NC, a scopo didattico.
