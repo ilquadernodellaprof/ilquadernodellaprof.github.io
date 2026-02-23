@@ -5,7 +5,7 @@ title: Pagina di prova
 Qui va inserita una breve frase introduttiva, se no la pagina non funziona bene in stampa.
 
 <button class="btn-stampa" onclick="window.print()">
-  Clicca qui se vuoi stampare questa pagina
+  Clicca qui per stampare la pagina
 </button>
 
 <style>
@@ -48,10 +48,6 @@ Qui va inserita una breve frase introduttiva, se no la pagina non funziona bene 
   font-family: sans-serif;
 }
 </style>
-
-<button class="btn-stampa" onclick="window.print()">
-  Clicca qui per stampare la pagina
-</button>
 
 ### Paragrafo
 
