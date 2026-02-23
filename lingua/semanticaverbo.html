@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area semantica del verbo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #1a1a2e;
+      padding: 16px;
+      min-height: 100vh;
+    }
+    h1 {
+      color: #f0c040;
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    }
+    .card-header {
+      background: #a020a0;
+      color: white;
+      font-weight: bold;
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 10px 8px;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+    .card-header span {
+      font-size: 0.95rem;
+    }
+    .card-body {
+      background: white;
+      padding: 10px;
+      font-size: 0.78rem;
+      color: #222;
+      line-height: 1.7;
+    }
+    .card-body .verb {
+      display: inline-block;
+      background: #f5eaff;
+      border-radius: 4px;
+      padding: 1px 5px;
+      margin: 2px 2px;
+      font-size: 0.74rem;
+      color: #5a0080;
+      font-weight: 600;
+    }
+    .note {
+      margin-top: 20px;
+      background: #f5eaff;
+      border-left: 5px solid #a020a0;
+      border-radius: 10px;
+      padding: 16px 18px;
+      color: #1a0030;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .note h2 {
+      color: #a020a0;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .note ul {
+      list-style: none;
+      padding: 0;
+    }
+    .note ul li {
+      padding: 3px 0;
+    }
+    .note ul li::before {
+      content: "→ ";
+      color: #a020a0;
+      font-weight: bold;
+    }
+    @media (max-width: 400px) {
+      .grid { grid-template-columns: 1fr; }
+      h1 { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Area semantica del verbo:<br>cosa significa la scena?</h1>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="card-header">Scene di<br><span>COMUNICAZIONE, DONAZIONE e SOTTRAZIONE</span></div>
+    <div class="card-body">
+      <span class="verb">DIRE</span><span class="verb">DARE</span><span class="verb">SPIEGARE</span><span class="verb">INVIARE</span><span class="verb">PRESTARE</span><span class="verb">VENDERE</span><span class="verb">RUBARE</span><span class="verb">SCRIVERE</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Scene di<br><span>MOVIMENTO con una META necessaria</span></div>
+    <div class="card-body">
+      <span class="verb">ANDARE</span><span class="verb">ARRIVARE</span><span class="verb">TORNARE</span><span class="verb">CORRERE</span><span class="verb">RECARSI</span><span class="verb">MUOVERSI</span><span class="verb">PARTIRE</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Scene di<br><span>PROVENIENZA o di ORIGINE</span></div>
+    <div class="card-body">
+      <span class="verb">VENIRE</span><span class="verb">PROVENIRE</span><span class="verb">TORNARE</span><span class="verb">RICEVERE</span><span class="verb">EREDITARE</span><span class="verb">ATTINGERE</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Scene di<br><span>SEPARAZIONE, ALLONTANAMENTO e PRIVAZIONE</span></div>
+    <div class="card-body">
+      <span class="verb">SOTTRARRE</span><span class="verb">DIVIDERE</span><span class="verb">ALLONTANARE</span><span class="verb">PARTIRE</span><span class="verb">SCAPPARE</span><span class="verb">RUBARE</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Scene di<br><span>COLLOCAZIONE o di TRASFORMAZIONE</span></div>
+    <div class="card-body">
+      <span class="verb">POGGIARE</span><span class="verb">METTERE</span><span class="verb">INFILARE</span><span class="verb">TRASFORMARE</span><span class="verb">TRADURRE</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Scene di<br><span>RELAZIONE o di CONTATTO</span></div>
+    <div class="card-body">
+      <span class="verb">UNIRE</span><span class="verb">LITIGARE</span><span class="verb">COLLABORARE</span><span class="verb">SCONTRARSI</span><span class="verb">CONFRONTARE</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Scene di<br><span>ATTRAVERSAMENTO o PREPARAZIONE PER UNO SCOPO</span></div>
+    <div class="card-body">
+      <span class="verb">PASSARE</span><span class="verb">TRANSITARE</span><span class="verb">PREPARARSI</span><span class="verb">ALLENARE</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">Scene di<br><span>RIEMPIMENTO o di RIMOZIONE</span></div>
+    <div class="card-body">
+      <span class="verb">RIEMPIRE</span><span class="verb">FORNIRE</span><span class="verb">CARICARE</span><span class="verb">PRIVARE</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="note">
+  <h2>RICORDA:</h2>
+  <ul>
+    <li>I verbi bivalenti, trivalenti e tetravalenti possono reggere uno o più oggetti indiretti</li>
+    <li>L'argomento oggetto indiretto è sempre un gruppo del nome con preposizione (sintagma preposizionale)</li>
+    <li>Nella maggior parte dei casi il verbo decide la preposizione che vuole</li>
+    <li>Conoscere l'area semantica del verbo può aiutarci a individuare la preposizione</li>
+    <li>…ma nel dubbio c'è sempre il vocabolario, che a differenza del lupo non morde 😉</li>
+  </ul>
+</div>
+
+</body>
+</html>
