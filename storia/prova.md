@@ -1,8 +1,6 @@
 ---
 Title: Pagina di prova
 ---
-## Questa è una pagina di prova
-
 #### Argomento
 
 Questo è un semplice template per le pagine di storia.
