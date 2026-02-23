@@ -10,18 +10,33 @@ Qui va inserita una breve frase introduttiva, se no la pagina non funziona bene 
 
 <style>
 @media print {
-  /* Nasconde l'header e il bottone */
-  [role="banner"], .btn-stampa {
+  /* 1. Nasconde Header, Footer originale e Bottone */
+  [role="banner"], 
+  .footer-col-wrapper, 
+  .footer-heading, 
+  .btn-stampa {
     display: none !important;
   }
-  
-  /* Rimuove spazi bianchi in alto */
-  body, .post-header {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+
+  /* 2. Crea la riga di testo sintetica nel footer */
+  .site-footer::after {
+    content: "Contenuto curato da Lucia Capurri, distribuito con licenza CC-BY-NC a scopo didattico.";
+    display: block;
+    text-align: center;
+    font-size: 10pt;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+
+  /* 3. Ottimizza i margini per la carta */
+  body, .post-header, .wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
 
+/* Stile del bottone visibile a schermo */
 .btn-stampa {
   padding: 10px 20px;
   cursor: pointer;
@@ -29,10 +44,15 @@ Qui va inserita una breve frase introduttiva, se no la pagina non funziona bene 
   color: white;
   border: none;
   border-radius: 5px;
-  margin: 20px 0;
+  margin: 15px 0;
+  font-family: sans-serif;
 }
 </style>
 
-#### paragrafo
+<button class="btn-stampa" onclick="window.print()">
+  Clicca qui per stampare la pagina
+</button>
 
-Testo del paragrafo
+### Paragrafo
+
+Testo del paragrafo.
