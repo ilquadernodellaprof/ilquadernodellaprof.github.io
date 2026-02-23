@@ -2,9 +2,7 @@
 Title: Pagina di prova
 ---
 
-#### Argomento
-
-Questo è un semplice template per le pagine di storia.
+Qui va inserita una breve frase introduttiva, se no la pagina non funziona bene in stampa.
 
 <style>
 @media print {
