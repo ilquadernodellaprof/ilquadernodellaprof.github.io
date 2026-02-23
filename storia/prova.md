@@ -35,7 +35,6 @@ Qui va inserita una breve frase introduttiva, se no la pagina non funziona bene 
 
 #### paragrafo
 
-Testo del paragrafo.
-### Paragrafo 1
+Testo del paragrafo
 
-Testo convincente.
+to del paragrafo.
