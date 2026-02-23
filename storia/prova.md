@@ -1,7 +1,8 @@
 ---
 Title: Pagina di prova
 ---
-### Argomento
+
+#### Argomento
 
 Questo è un semplice template per le pagine di storia.
 
@@ -34,6 +35,9 @@ Questo è un semplice template per le pagine di storia.
   Clicca qui se vuoi stampare questa pagina
 </button>
 
+#### paragrafo
+
+Testo del paragrafo.
 ### Paragrafo 1
 
 Testo convincente.
