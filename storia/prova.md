@@ -48,6 +48,11 @@ Qui va inserita una breve frase introduttiva, se no la pagina non funziona bene 
   font-family: sans-serif;
 }
 </style>
+
+### Paragrafo
+
+Testo del paragrafo.
+
 /* Bottone indietro */
 <a href="javascript:history.back()" class="btn-torna">← Torna indietro</a>
 <style>
@@ -66,6 +71,3 @@ Qui va inserita una breve frase introduttiva, se no la pagina non funziona bene 
   text-decoration: none;
 }
 </style>
-### Paragrafo
-
-Testo del paragrafo.
