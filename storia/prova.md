@@ -48,7 +48,23 @@ Qui va inserita una breve frase introduttiva, se no la pagina non funziona bene 
   font-family: sans-serif;
 }
 </style>
-
+<a href="javascript:history.back()" class="btn-torna">← Torna indietro</a>
+<style>
+@media print {
+  .btn-torna { display: none !important; }
+}
+.btn-torna {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #a8c5a8;
+  color: #2d2d2d;
+  border-radius: 5px;
+  margin: 15px 0;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+</style>
 ### Paragrafo
 
 Testo del paragrafo.
