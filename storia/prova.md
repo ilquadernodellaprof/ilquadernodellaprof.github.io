@@ -53,9 +53,8 @@ Qui va inserita una breve frase introduttiva, se no la pagina non funziona bene 
 
 Testo del paragrafo.
 
-/* Bottone indietro */
-<a href="javascript:history.back()" class="btn-torna">← Torna indietro</a>
 <style>
+  /* Bottone indietro */
 @media print {
   .btn-torna { display: none !important; }
 }
@@ -71,3 +70,4 @@ Testo del paragrafo.
   text-decoration: none;
 }
 </style>
+<a href="javascript:history.back()" class="btn-torna">← Torna indietro</a>
