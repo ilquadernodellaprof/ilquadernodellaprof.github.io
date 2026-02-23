@@ -23,7 +23,7 @@ Questo è un semplice template per le pagine di storia.
 .btn-stampa {
   padding: 10px 20px;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #7a9e7e;
   color: white;
   border: none;
   border-radius: 5px;
