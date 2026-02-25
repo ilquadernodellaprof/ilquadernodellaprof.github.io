@@ -79,8 +79,8 @@ Questa industria mostra una geografia che cambia continuamente. Per decenni, le 
 Dopo la pandemia di Covid-19, però, l'Europa ha scoperto quanto fosse rischioso dipendere così tanto da paesi lontani per produrre medicine. Quando le forniture si bloccano, gli ospedali restano senza farmaci. Per questo molti governi europei stanno cercando di riportare le fabbriche più vicino a casa: è il fenomeno del **reshoring**, cioè il ritorno della produzione. Chi oggi è ai margini di questa industria potrebbe domani diventarne protagonista — ma anche il contrario.
 
 #### Fonti
-####### Dorocki Sławomir (2014), *Contemporary Trends in the Development of the Pharmaceutical Industry in the World*
-####### Federchimica Assobioterc (2025), *STUDI E DATI - Presentato il nuovo Report “Il Biotech in Italia": un settore sempre più diffuso e strategico per il Paese*
+###### Dorocki Sławomir (2014), *Contemporary Trends in the Development of the Pharmaceutical Industry in the World*
+###### Federchimica Assobioterc (2025), *STUDI E DATI - Presentato il nuovo Report “Il Biotech in Italia": un settore sempre più diffuso e strategico per il Paese*
 
 <style>
   /* Bottone indietro */
