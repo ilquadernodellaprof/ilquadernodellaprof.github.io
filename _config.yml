@@ -4,3 +4,9 @@ description: Questo sito è creato e gestito da Lucia Capurri e i contenuti pres
 lang: it
 header_pages:
   - about.md
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
