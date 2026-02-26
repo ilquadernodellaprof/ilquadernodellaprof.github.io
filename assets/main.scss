@@ -43,3 +43,67 @@ a[href*="2026-2e"] {
 a[href*="2026-2e"]:visited {
   color: #4e3666;
 }
+// Controlli pagina
+.page-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.btn-stampa {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #7a9e7e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+.font-btn {
+  padding: 6px 14px;
+  border: 2px solid #7a9e7e;
+  border-radius: 8px;
+  background: #fdfaf5;
+  color: #2d2d2d;
+  font-family: Georgia, serif;
+  cursor: pointer;
+}
+.font-btn:first-of-type { font-size: 0.85em; }
+.font-btn:last-of-type  { font-size: 1.1em; font-weight: bold; }
+
+.btn-torna {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #a8c5a8;
+  color: #2d2d2d;
+  border-radius: 5px;
+  margin: 15px 0;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+@media print {
+  [role="banner"],
+  .footer-col-wrapper,
+  .footer-heading,
+  .page-controls,
+  .btn-torna {
+    display: none !important;
+  }
+  .site-footer::after {
+    content: "Contenuto curato da Lucia Capurri, distribuito con licenza CC-BY-NC a scopo didattico.";
+    display: block;
+    text-align: center;
+    font-size: 10pt;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+  body, .post-header, .wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
