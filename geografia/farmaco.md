@@ -3,51 +3,6 @@ title: La filiera del farmaco in Europa
 ---
 Quando compri un medicinale in farmacia, stai toccando il risultato di un processo che può durare vent'anni e coinvolgere laboratori, fabbriche e uffici distribuiti in decine di paesi.
 
-<button class="btn-stampa" onclick="window.print()">
-  Clicca qui per stampare la pagina
-</button>
-
-<style>
-@media print {
-  /* 1. Nasconde Header, Footer originale e Bottone */
-  [role="banner"], 
-  .footer-col-wrapper, 
-  .footer-heading, 
-  .btn-stampa {
-    display: none !important;
-  }
-
-  /* 2. Crea la riga di testo sintetica nel footer */
-  .site-footer::after {
-    content: "Contenuto curato da Lucia Capurri, distribuito con licenza CC-BY-NC a scopo didattico.";
-    display: block;
-    text-align: center;
-    font-size: 10pt;
-    border-top: 1px solid #ccc;
-    margin-top: 20px;
-    padding-top: 10px;
-  }
-
-  /* 3. Ottimizza i margini per la carta */
-  body, .post-header, .wrapper {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-}
-
-/* Stile del bottone visibile a schermo */
-.btn-stampa {
-  padding: 10px 20px;
-  cursor: pointer;
-  background-color: #7a9e7e;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  margin: 15px 0;
-  font-family: sans-serif;
-}
-</style>
-
 L'industria farmaceutica è oggi una delle più potenti al mondo e l'Europa ne è uno dei centri principali: circa un quarto di tutti i farmaci venduti nel mondo viene prodotto o venduto in Europa.
 
 Non è un caso che sei delle dieci più grandi aziende farmaceutiche mondiali abbiano la propria sede tra gli Stati Uniti e l'Europa occidentale. Questa industria si sviluppa dove ci sono buone università, soldi pubblici investiti nella ricerca e una lunga storia scientifica alle spalle. Non si trasferisce facilmente da un posto all'altro: ha bisogno di persone molto formate e di strutture adatte: ci vogliono decenni a ottenere entrambe le cose.
@@ -81,22 +36,3 @@ Dopo la pandemia di Covid-19, però, l'Europa ha scoperto quanto fosse rischioso
 #### Fonti
 ###### Dorocki Sławomir (2014), *Contemporary Trends in the Development of the Pharmaceutical Industry in the World*
 ###### Federchimica Assobioterc (2025), *STUDI E DATI - Presentato il nuovo Report “Il Biotech in Italia": un settore sempre più diffuso e strategico per il Paese*
-
-<style>
-  /* Bottone indietro */
-@media print {
-  .btn-torna { display: none !important; }
-}
-.btn-torna {
-  display: inline-block;
-  padding: 10px 20px;
-  cursor: pointer;
-  background-color: #a8c5a8;
-  color: #2d2d2d;
-  border-radius: 5px;
-  margin: 15px 0;
-  font-family: sans-serif;
-  text-decoration: none;
-}
-</style>
-<a href="javascript:history.back()" class="btn-torna">← Torna indietro</a>
