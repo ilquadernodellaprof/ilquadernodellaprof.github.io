@@ -74,7 +74,7 @@ Napoleone vi morì il 5 maggio 1821, a cinquantun anni.
 
 ---
 
-## La Restaurazione: quasi tutto come prima, ma non tutto
+## La Restaurazione
 
 Nel novembre del 1814 a Vienna si aprì il grande congresso internazionale per ridisegnare la carta dell'Europa. Il principio di base era la *legittimità*: le monarchie rovesciate dovevano tornare sul trono, i confini tornare più o meno a come erano prima del 1789. In larga parte funzionò così.
 
