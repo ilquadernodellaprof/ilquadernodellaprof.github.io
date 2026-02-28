@@ -29,7 +29,7 @@ La risposta fu un **boicottaggio** sistematico delle merci inglesi, le cui vendi
 
 ## Il Boston Tea Party e la risposta inglese
 
-Il tè era diventato il simbolo della politica fiscale inglese. La Compagnia delle Indie Orientali aveva il monopolio della sua vendita nelle colonie, e sul prezzo gravava una tassa che i coloni non ritenevano legittima. 
+Il tè era diventato il simbolo della politica fiscale inglese. La Compagnia delle Indie Orientali aveva il monopolio della sua vendita nelle colonie e sul prezzo gravava una tassa che i coloni non ritenevano legittima. 
 Quando nel dicembre 1773 tre navi cariche di tè arrivarono nel porto di Boston, un gruppo di patrioti decise di agire. Il travestimento da indigeni serviva sia a nascondere l'identità dei partecipanti e far ricadere la colpa sui nativi, sia a sottolineare simbolicamente che si sentivano americani, non inglesi.
 
 La reazione del governo inglese fu durissima: chiuse il porto di Boston fino al completo risarcimento delle merci distrutte e tolse potere alla sua assemblea locale. Invece di stroncare la rivolta, questa risposta ottenne l'effetto opposto: in tutte le tredici colonie sorsero comitati e assemblee che rimpiazzarono le autorità inglesi.
@@ -55,4 +55,4 @@ Nell'estate del 1787, tra maggio e settembre, una Convenzione si riunì a Filade
 
 Il sistema che inventarono a Filadelfia si basava su un principio che veniva direttamente dai filosofi illuministi, ma che qui veniva applicato per la prima volta in un documento costituzionale vero: la **separazione dei poteri**. Il potere legislativo era affidato al Congresso, composto da due rami (Camera e Senato). Il potere esecutivo spettava al presidente, eletto dal popolo ogni quattro anni. Il potere giudiziario era esercitato dalla Corte Suprema. Ognuno dei tre poteri aveva strumenti per controllare gli altri, così che nessuno potesse diventare troppo forte.
 
-Nel 1791 furono aggiunti i primi dieci emendamenti (=modifiche al testo originale) che formavano una vera dichiarazione dei diritti individuali: libertà di parola, di stampa, di religione, il diritto a un processo equo. La Costituzione americana da allora è stata modificata decine di volte, fino a tempi recentissimi, ma è ancora in vigore. Non è un monumento immobile, ma un documento progettato per essere aggiornato.
+Nel 1791 furono aggiunti i primi dieci emendamenti (=modifiche al testo originale) che formavano una vera dichiarazione dei diritti individuali: libertà di parola, di stampa, di religione, il diritto a un processo equo. La Costituzione americana da allora è stata modificata diverse volte, fino a tempi recentissimi, ma è ancora in vigore. Non è un monumento immobile, ma un documento progettato per essere aggiornato.
