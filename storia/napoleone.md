@@ -13,7 +13,7 @@ Vale la pena fermarsi sull'aspetto fisico, perché su Napoleone circola ancora o
 
 Nel 1789, mentre Napoleone aveva vent'anni ed era un giovane ufficiale di artiglieria, in Francia esplose la Rivoluzione. Lui osservò. Il suo primo atto davvero rilevante arrivò nel dicembre del 1793, a Tolone. La città si era consegnata agli inglesi e i francesi dovevano riprenderla. Napoleone formulò un piano audace: piazzare i cannoni su una collina dominante il porto per rendere impossibile la permanenza della flotta inglese. Il piano funzionò. Napoleone aveva ventidue anni e fu promosso a generale.
 
-Si spos con Joséphine de Beauharnais e, nel marzo del 1796, fu incaricato di guidare le truppe francesi nella campagna d'Italia.
+Si sposò con Joséphine de Beauharnais e, nel marzo del 1796, fu incaricato di guidare le truppe francesi nella campagna d'Italia.
 
 ---
 
@@ -23,7 +23,7 @@ La **campagna d'Italia del 1796-1797** è il primo capolavoro militare di Napole
 
 Napoleone fu così orgoglioso della sua prima battaglia vinta in Italia che,quando anni dopo la Liguria entrò a far parte della Francia, tutta la provincia di Savona fu chiamata Dipartimento di Montenotte.
 
-Da Montenotte, Napoleone avanzò verso est. Il 15 maggio 1796 entrò trionfalmente a Milano. Continuando verso sud costrinse i governi di Parma, Roma e Napoli a firmare tregue per loro svantaggiose. Quindi creò nuove repubbliche sorelle sul modello francese: la Repubblica Cisalpina in Lombardia, la Repubblica Ligure a Genova. Furono chiamate "repubbliche sorelle". A Reggio Emilia, nel congresso che fondò la Repubblica Cispadana, fu inventato il tricolore italiano. La campagna si concluse con la **pace di Campoformio**, nel 1797: Venezia fu ceduta agli austriaci, in cambio del riconoscimento delle repubbliche sorelle da parte degli Asburgo.
+Da Montenotte, Napoleone avanzò verso est. Il 15 maggio 1796 entrò trionfalmente a Milano. Continuando verso sud costrinse i governi di Parma, Roma e Napoli a firmare tregue per loro svantaggiose. Quindi creò nuove repubbliche sul modello francese: la Repubblica Cisalpina in Lombardia, la Repubblica Ligure a Genova. Furono chiamate **repubbliche sorelle**. A Reggio Emilia, nel congresso che fondò la Repubblica Cispadana, fu inventato il tricolore italiano. La campagna si concluse con la **pace di Campoformio**, nel 1797: Venezia fu ceduta agli austriaci, in cambio del riconoscimento delle repubbliche sorelle da parte degli Asburgo.
 
 ---
 
@@ -39,7 +39,7 @@ Sul piano militare, però, la flotta francese fu distrutta dagli inglesi e l'ese
 Napoleone non era un filosofo né un teorico politico. Era un militare, abituato a leggere i campi di battaglia. Ma aveva una capacità rara: capire quando il momento era propizio per agire. E nel 1799 il momento era propizio. Il Direttorio (il governo rivoluzionario francese, in carica da quattro anni) era impopolare. Un generale con truppe fedeli e un'ottima reputazione poteva fare quello che voleva.
 
 Il 18 brumaio dell'anno VIII Napoleone si mosse (brumaio era uno dei nuovi nomi dei mesi inventati dai rivoluzionari: la data corrisponde al 9 novembre 1799 ma è importante usare il nome *18 brumaio*). Napoleone si presentò davanti all'Assemblea per parlare, ma venne accolto con urla ostili e spintoni. Sembrava smarrito, ma con un colpo di scena, i suoi soldati entrarono in aula. 
-Il grosso dei deputati scappò. I pochissimi rimasti votarono la consegna dei poteri a tre consoli: Bonaparte, Sieyès e Ducos. Fun un vero e proprio colpo di stato.
+Il grosso dei deputati scappò. I pochissimi rimasti votarono la consegna dei poteri a tre consoli: Bonaparte, Sieyès e Ducos. Fu un un vero e proprio colpo di stato.
 
 ---
 
@@ -61,9 +61,9 @@ Napoleone è una figura piena di contraddizioni. Da un lato è colui che *consol
 
 ## L'espansione europea
 Tra il 1805 e il 1809 Napoleone costruì l'impero più grande che l'Europa avesse visto dai tempi di Carlo Magno. Il 2 dicembre 1805 sconfisse l'esercito austriaco e quelo russo ad Austerlitz, in Moravia, in quella che è considerata la sua vittoria più brillante. Nel 1806 creò la Confederazione del Reno, riunendo sotto il protettorato francese una ventina di stati tedeschi e decretando di fatto **la fine del Sacro Romano Impero**, che aveva mille anni di storia.
-All'apice del suo potere, nel 1810-1812, l'Impero francese contava 130 dipartimenti e circa 44 milioni di abitanti, senza contare gli stati vassalli. In buona parte d'Europa regnava un fratello o un cognato di Napoleone: il fratello Giuseppein Spagna; il fratello Luigi in Olanda; il cognato Murat a Napoli.
+All'apice del suo potere, nel 1810-1812, l'Impero francese contava 130 dipartimenti e circa 44 milioni di abitanti, senza contare gli stati vassalli. In buona parte d'Europa regnava un fratello o un cognato di Napoleone: il fratello Giuseppe in Spagna; il fratello Luigi in Olanda; il cognato Murat a Napoli.
 
-Rimanevano solo gli inglesi a tenergli testa, grazie alla loro formidabile flotta. Dopo aver perso un'importante battaglia navale a Trafalgar nel 1805, Napoleone aveva capito che non avrebbe mai potuto battere la Gran Bretagna sul mare. Tentò allora di prenderla per la fame: l'anno dopo la battablia proibì a tutta l'Europa di commerciare con le isole britanniche. Era il cosiddetto **blocco continentale**. In teoria una mossa geniale, ma in pratica quasi impossibile da far rispettare, perché il contrabbando era ovunque e le coste d'Europa erano troppo lunghe da controllare.
+Rimanevano solo gli inglesi a tenergli testa, grazie alla loro formidabile flotta. Dopo aver perso un'importante battaglia navale a Trafalgar nel 1805, Napoleone aveva capito che non avrebbe mai potuto battere la Gran Bretagna sul mare. Tentò allora di prenderla per la fame: l'anno dopo la battaglia proibì a tutta l'Europa di commerciare con le isole britanniche. Era il cosiddetto **blocco continentale**. In teoria una mossa geniale, ma in pratica quasi impossibile da far rispettare, perché il contrabbando era ovunque e le coste d'Europa erano troppo lunghe da controllare.
 
 Il primo cedimento del suo potere fu in Spagna. Il popolo non aveva mai accettato la sostituzione del re legittimo con un fratello di Napoleone: scoppiò una guerriglia durissima, sostenuta militarmente dagli inglesi. La Spagna divenne una ferita aperta che assorbì risorse umane ed economiche per anni.
 Ma il colpo decisivo per l'esercito francese fu la campagna di Russia. Nel 1812 lo zar Alessandro I si era riavvicinato agli inglesi e aveva ripreso i commerci con loro, violando il blocco. Napoleone decise di punirlo. Nella tarda primavera del 1812 inviò in Russia il più grande esercito che si fosse mai visto.
