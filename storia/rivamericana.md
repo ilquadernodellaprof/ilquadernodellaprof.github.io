@@ -7,7 +7,7 @@ La notte del 16 dicembre 1773 fa freddo sul porto di Boston. Un gruppo di uomini
 
 Lungo la costa orientale del Nord America, tra la fine del Cinquecento e l'inizio del Settecento, l'Inghilterra aveva fondato e conquistato un insieme di territori che nel 1732 raggiunsero il numero di tredici. I loro nomi raccontano, quasi da soli, la storia coloniale del continente.
 
-Alcuni vengono direttamente dalle popolazioni indigene: Massachusetts e Connecticut sono nomi di origine locale. Nuova Amsterdam, invece, era una colonia olandese che gli inglesi conquistarono nel 1664 e ribattezzarono New York. Il Rhode Island invece aveva un nome molto più lungo, che contenteva addirittura fino al 2020 la parola "piantagione". Altri nomi sono omaggi espliciti alla monarchia inglese: la Virginia venne chiamata così in onore di Elisabetta I, la regina vergine; la Carolina da Carlo II e Georgia da re Giorgio I. Lo stesso schema vale per la principale colonia francese nel Nord America: la Louisiana, chiamata così in onore di Luigi XIV.
+Alcuni vengono direttamente dalle popolazioni indigene: Massachusetts e Connecticut sono nomi di origine locale. Nuova Amsterdam, invece, era una colonia olandese che gli inglesi conquistarono nel 1664 e ribattezzarono New York. Il Rhode Island invece aveva un nome molto più lungo, che contenteva addirittura fino al 2020 la parola "piantagione". Altri nomi sono omaggi espliciti alla monarchia inglese: la Virginia venne chiamata così in onore di Elisabetta I, la regina vergine; la Carolina da Carlo II e Georgia da re Giorgio II. Lo stesso schema vale per la principale colonia francese nel Nord America: la Louisiana, chiamata così in onore di Luigi XIV.
 
 Alla vigilia della rivoluzione, nel 1775, le tredici colonie contavano circa due milioni e mezzo di abitanti. Erano arrivati per ragioni diverse: chi per motivi religiosi, chi per sfuggire alla povertà, chi cercava semplicemente terra da coltivare. Molti si erano pagati il viaggio lavorando per anni alle dipendenze di un padrone, al termine dei quali ricevevano la libertà e spesso un pezzo di terreno.
 
@@ -25,15 +25,16 @@ Dopo la guerra dei Sette anni (1756-1763), combattuta in parte anche in Nord Ame
 
 I coloni reagirono con indignazione. Il loro argomento era preciso: in Inghilterra ogni contea aveva i propri rappresentanti in Parlamento, che discutevano e votavano le leggi fiscali. I coloni non avevano nessun rappresentante a Londra. Pagare le tasse senza avere voce in capitolo era una violazione dei loro diritti. Da questo ragionamento nacque lo slogan che diventò il simbolo della resistenza: *No taxation without representation* — nessuna tassa senza rappresentanza. Non chiedevano l'esenzione totale dalle tasse, ma lo stesso diritto che avevano già i cittadini inglesi.
 
-La risposta fu un boicottaggio sistematico delle merci inglesi, le cui vendite nelle colonie crollarono di due terzi. La tensione salì ulteriormente nel 1770, quando i soldati inglesi aprirono il fuoco su una folla a Boston, uccidendo cinque persone.
+La risposta fu un **boicottaggio** sistematico delle merci inglesi, le cui vendite nelle colonie crollarono di due terzi. La tensione salì ulteriormente nel 1770, quando i soldati inglesi aprirono il fuoco su una folla a Boston, uccidendo cinque persone.
 
 ## Il Boston Tea Party e la risposta inglese
 
-Il tè era diventato il simbolo della politica fiscale inglese. La Compagnia delle Indie Orientali aveva il monopolio della sua vendita nelle colonie, e sul prezzo gravava una tassa che i coloni non ritenevano legittima Quando nel dicembre 1773 tre navi cariche di tè arrivarono nel porto di Boston, un gruppo di patrioti decise di agire. Il travestimento da indigeni serviva sia a nascondere l'identità dei partecipanti, sia a sottolineare simbolicamente che si sentivano americani, non inglesi.
+Il tè era diventato il simbolo della politica fiscale inglese. La Compagnia delle Indie Orientali aveva il monopolio della sua vendita nelle colonie, e sul prezzo gravava una tassa che i coloni non ritenevano legittima. 
+Quando nel dicembre 1773 tre navi cariche di tè arrivarono nel porto di Boston, un gruppo di patrioti decise di agire. Il travestimento da indigeni serviva sia a nascondere l'identità dei partecipanti e far ricadere la colpa sui nativi, sia a sottolineare simbolicamente che si sentivano americani, non inglesi.
 
 La reazione del governo inglese fu durissima: chiuse il porto di Boston fino al completo risarcimento delle merci distrutte e tolse potere alla sua assemblea locale. Invece di stroncare la rivolta, questa risposta ottenne l'effetto opposto: in tutte le tredici colonie sorsero comitati e assemblee che rimpiazzarono le autorità inglesi.
 
-## La guerra
+## La guerra d'indipendenza
 
 Nel settembre 1774 si riunì a Filadelfia il primo Congresso continentale, che decise di continuare il boicottaggio e ribadì che i coloni riconoscevano valide solo le leggi votate dalle proprie assemblee, non quelle del Parlamento britannico. Intanto le truppe inglesi e quelle dei coloni cominciarono a scontrarsi.
 
@@ -41,7 +42,7 @@ Il 4 luglio 1776 il Congresso approvò la Dichiarazione di Indipendenza, che pro
 
 Il comando dell'esercito coloniale fu affidato a George Washington (1732-1799), un ricco possidente della Virginia che aveva già combattuto nella guerra dei Sette anni. L'esercito inglese, vestito con le caratteristiche giubbe rosse, era più addestrato e ottenne alcuni successi iniziali. Ma i coloni sfruttarono la conoscenza del territorio, ricorrendo alla guerriglia e alle imboscate.
 
-La svolta arrivò nell'ottobre 1777, con la battaglia di Saratoga: un contingente inglese di 8.000 soldati si arrese all'esercito americano. Fu questo episodio a convincere il governo francese a intervenire militarmente a fianco delle colonie. La Francia, che nella guerra dei Sette anni aveva perso la Louisiana, era favorevole all'indipendenza delle Colonie sia per danneggiare l'Inghilterra, sia per l'influenza di Benjamin Franklin, il delegato del Congresso di Filadelfia alla corte di Versailles.
+La svolta arrivò nell'ottobre 1777, con la battaglia di Saratoga: un contingente inglese di 8.000 soldati si arrese all'esercito americano. Fu questo episodio a convincere il governo francese a intervenire militarmente a fianco delle colonie. La Francia, che nella guerra dei Sette anni aveva perso i suoi immensi possedimenti in America del Nord, era favorevole all'indipendenza delle Colonie sia per danneggiare l'Inghilterra, sia perché Benjamin Franklin, il delegato del Congresso di Filadelfia alla corte di Versailles, era molto influente in Francia.
 
 Franklin era una figura straordinaria: di origini modeste, aveva cominciato come stampatore, ma divenne uno scienziato famoso in tutta Europa per aver dimostrato la natura elettrica dei fulmini e per aver inventato il parafulmine. Era l'uomo che più di chiunque altro dimostrava il legame tra la rivoluzione americana e l'Illuminismo europeo.
 
