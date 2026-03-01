@@ -69,8 +69,11 @@ Leggiamo questa breve storia assurda.
 Tralasciando il fatto che questa storiella non è scritta bene (ci sono davvero troppe ripetizioni), possiamo fare qualche osservazione.
 
 >Giada rompe il vetro.
+>
 >Il vetro è rotto da Giada.
+>
 >Il vetro si è rotto per colpa di Giada.
+>
 >Giada causa la rottura del vetro.
 
 In queste quattro frasi, chi è che compie l'azione? Chi è che la subisce?
@@ -80,6 +83,7 @@ Ora fai lo schema a raggi delle quattro frasi. Fai attenzione, perché le ultime
 		<summary>Clicca qui per la soluzione.</summary>
 	![soluzione delle frasi](urlimmagine.png)
 </details>
+
 
 Come vedi, Giada è sempre colei che compie l'azione, ma non è sempre il soggetto delle frasi. Giada è **agente**. Il vetro subisce sempre l'azione, anche quando è soggetto di una frase passiva: è **paziente**.
 
@@ -92,6 +96,7 @@ Il **ruolo semantico** è scelto dal verbo sulla base del significato di tutta l
 Osserviamo queste frasi:
 
 >Giada **odia** il vetro.
+>
 >A Giada non **piace** il vetro.
 
 In entrambe le frasi Giada fa esperienza di un sentimento. Il ruolo di Giada è quello di **esperiente**.
@@ -102,7 +107,9 @@ Attenzione però! Il soggetto della seconda frase è il vetro!
 Osserviamo queste tre frasi.
 
 >**Giada** ha un'auto.
+>
 >I ladri rubano l'auto **a Giada**.
+>
 >I ladri rubano l'auto **di Giada**.
 
 In tutte queste frasi Giada non compie un'azione, ma è quella che possiede l'auto. Il ruolo di Giada è quello di **possessore** (si dice al maschile, anche se è femmina).
@@ -110,7 +117,9 @@ In tutte queste frasi Giada non compie un'azione, ma è quella che possiede l'au
 Osserviamo queste ultime tre frasi.
 
 >**Giada** riceve un pacco.
+>
 >I ladri inviano un pacco **a Giada**.
+>
 >Sulla strada c'è un pacco **per Giada**.
 
 In tutte queste frasi Giada riceve un pacco. Il ruolo di Giada è quello di **destinatario**.
@@ -124,15 +133,15 @@ Il destinatario coincide con quello che la grammatica tradizionale chiama **term
     <div class="ruolo-funzioni">
       <div class="ruolo-cella">
         <div class="etichetta">Soggetto</div>
-        Giada rompe il vetro.
+        <strong>Giada</strong> rompe il vetro.
       </div>
       <div class="ruolo-cella">
-        <div class="etichetta">Oggetto</div>
-        Il vetro è rotto da Giada.
+        <div class="etichetta">Oggetto indiretto</div>
+        Il vetro è rotto <strong>da Giada</strong>.
       </div>
       <div class="ruolo-cella">
         <div class="etichetta">Circostante</div>
-        Il vetro si è rotto per colpa di Giada.
+        Il vetro si è rotto per colpa <strong>di Giada</strong>.
       </div>
     </div>
   </div>
@@ -142,15 +151,15 @@ Il destinatario coincide con quello che la grammatica tradizionale chiama **term
     <div class="ruolo-funzioni">
       <div class="ruolo-cella">
         <div class="etichetta">Soggetto</div>
-        Il vetro è rotto da Giada.
+        <strong>Il vetro</strong> è rotto da Giada.
       </div>
       <div class="ruolo-cella">
-        <div class="etichetta">Oggetto</div>
-        Giada rompe il vetro.
+        <div class="etichetta">Oggetto diretto</div>
+        Giada rompe <strong>il vetro</strong>.
       </div>
       <div class="ruolo-cella">
         <div class="etichetta">Circostante</div>
-        Giada causa la rottura del vetro.
+        Giada causa la rottura <strong>del vetro</strong>.
       </div>
     </div>
   </div>
@@ -160,11 +169,11 @@ Il destinatario coincide con quello che la grammatica tradizionale chiama **term
     <div class="ruolo-funzioni">
       <div class="ruolo-cella">
         <div class="etichetta">Soggetto</div>
-        Giada odia il vetro.
+        <strong>Giada</strong> odia il vetro.
       </div>
       <div class="ruolo-cella">
-        <div class="etichetta">Oggetto</div>
-        A Giada non piace il vetro.
+        <div class="etichetta">Oggetto indiretto</div>
+        <strong>A Giada</strong> non piace il vetro.
       </div>
       <div class="ruolo-cella vuoto">
         <div class="etichetta">Circostante</div>
@@ -178,15 +187,15 @@ Il destinatario coincide con quello che la grammatica tradizionale chiama **term
     <div class="ruolo-funzioni">
       <div class="ruolo-cella">
         <div class="etichetta">Soggetto</div>
-        Giada ha un'auto.
+        <strong>Giada</strong> ha un'auto.
       </div>
       <div class="ruolo-cella">
-        <div class="etichetta">Oggetto</div>
-        I ladri rubano l'auto a Giada.
+        <div class="etichetta">Oggetto indiretto</div>
+        I ladri rubano l'auto <strong>a Giada</strong>.
       </div>
       <div class="ruolo-cella">
         <div class="etichetta">Circostante</div>
-        I ladri rubano l'auto di Giada.
+        I ladri rubano l'auto <strong>di Giada</strong>.
       </div>
     </div>
   </div>
@@ -196,15 +205,15 @@ Il destinatario coincide con quello che la grammatica tradizionale chiama **term
     <div class="ruolo-funzioni">
       <div class="ruolo-cella">
         <div class="etichetta">Soggetto</div>
-        Giada riceve un pacco.
+        <strong>Giada</strong> riceve un pacco.
       </div>
       <div class="ruolo-cella">
-        <div class="etichetta">Oggetto</div>
-        I ladri inviano un pacco a Giada.
+        <div class="etichetta">Oggetto indiretto</div>
+        I ladri inviano un pacco <strong>a Giada</strong>.
       </div>
       <div class="ruolo-cella">
         <div class="etichetta">Circostante</div>
-        Sulla strada c'è un pacco per Giada.
+        Sulla strada c'è un pacco <strong>per Giada</strong>.
       </div>
     </div>
   </div>
