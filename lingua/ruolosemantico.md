@@ -59,6 +59,38 @@ title: Ruolo semantico e funzione sintattica
     border-left: none;
   }
 }
+details {
+  margin: 1rem 0;
+}
+
+details summary {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::before {
+  content: "▶ ";
+  font-size: 0.75rem;
+}
+
+details[open] summary::before {
+  content: "▼ ";
+}
+
+details[open] summary {
+  margin-bottom: 0.8rem;
+}
 </style>
 
 Leggiamo questa breve storia assurda.
@@ -102,7 +134,7 @@ Osserviamo queste frasi:
 In entrambe le frasi Giada fa esperienza di un sentimento. Il ruolo di Giada è quello di **esperiente**.
 Attenzione però! Il soggetto della seconda frase è il vetro!
 
-**Ricorda**: un soggetto non può **mai** essere un gruppo del nome con preposizione (sintagma preposizionale).
+**Ricorda**: un soggetto non può **mai** essere un gruppo del nome con preposizione (sintagma preposizionale). Ecco perché Giada non è soggetto!
 
 Osserviamo queste tre frasi.
 
