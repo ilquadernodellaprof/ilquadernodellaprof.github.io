@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domande LIM Gruppi</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    .controlli {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .btn-lim {
+      padding: 10px 24px;
+      font-size: clamp(0.9rem, 2vw, 1.4rem);
+      cursor: pointer;
+      font-weight: bold;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      opacity: 0.6;
+      transition: all 0.2s;
+    }
+
+    .btn-lim:hover {
+      background: #555;
+      transform: scale(1.05);
+    }
+
+    .btn-lim.attivo {
+      opacity: 1;
+      background: #000;
+    }
+
+    #griglia-domande {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .quadrante {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: clamp(10px, 2vw, 30px);
+      border: 5px solid #000;
+      border-radius: 10px;
+      line-height: 1.4;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .domanda-testo {
+      font-weight: 800;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .risposta-testo {
+      font-style: italic;
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* Colori chiari, testo nero */
+    .gA { background-color: #FFF176; color: #000; }
+    .gB { background-color: #90CAF9; color: #000; }
+    .gC { background-color: #A5D6A7; color: #000; }
+    .gD { background-color: #EF9A9A; color: #000; }
+
+    .nome-gruppo {
+      font-size: 1em;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="controlli">
+  <button class="btn-lim btn-reset" onclick="mostraStart()">↩ GRUPPI</button>
+  <button class="btn-lim" onclick="mostraSet(1)">SET 1</button>
+  <button class="btn-lim" onclick="mostraSet(2)">SET 2</button>
+  <button class="btn-lim" onclick="mostraSet(3)">SET 3</button>
+  <button class="btn-lim" onclick="mostraSet(4)">SET 4</button>
+</div>
+
+<div id="griglia-domande">
+  <div id="qA" class="quadrante gA">GRUPPO A</div>
+  <div id="qB" class="quadrante gB">GRUPPO B</div>
+  <div id="qC" class="quadrante gC">GRUPPO C</div>
+  <div id="qD" class="quadrante gD">GRUPPO D</div>
+</div>
+
+<script>
+  function formatta(domanda, risposte) {
+    let html = `<span class="domanda-testo">${domanda}</span>`;
+    risposte.forEach(r => {
+      html += `<span class="risposta-testo">• ${r}</span>`;
+    });
+    return html;
+  }
+
+  const database = {
+    1: [
+      formatta("Il debito che l'Inghilterra voleva ripagare con le tasse era dovuto a:", ["A. Guerra dei Sette anni", "B. Rivoluzione industriale"]),
+      formatta("Cosa cercava il popolo nella Bastiglia il 14 luglio?", ["A. Polvere da sparo e armi", "B. Cibo e grano"]),
+      formatta("Prima delle fabbriche:", ["A. Esisteva la protoindustria: i mercanti davano materiali a famiglie che li lavoravano", "B. Esisteva l'artigianato: le famiglie avevano la propria bottega ed erano anche commercianti"]),
+      formatta("Dove si trovava Napoleone quando fece il piano dei cannoni sulla collina?", ["A. Tolone", "B. Ajaccio"])
+    ],
+    2: [
+      formatta("In quale porto i coloni buttarono il tè in mare?", ["A. New York", "B. Boston"]),
+      formatta("I 'quaderni delle lamentele' venivano compilati per:", ["A. Il Direttorio", "B. Gli Stati Generali"]),
+      formatta("Perché i produttori di lana inglesi avevano paura del cotone indiano?", ["A. Perché era proibito dalla Chiesa anglicana", "B. Perché costava meno ed era più facile da lavare"]),
+      formatta("Quale stato fu ceduto all'Austria con la pace di Campoformio?", ["A. Repubblica di Genova", "B. Repubblica di Venezia"])
+    ],
+    3: [
+      formatta("La Dichiarazione d'Indipendenza dice che tutti gli uomini hanno diritto alla vita, alla libertà e a:", ["A. Non pagare mai le tasse", "B. Cercare la felicità"]),
+      formatta("Quale vulcano causò la nube che rovinò i raccolti?", ["A. Vesuvio", "B. Laki"]),
+      formatta("In Inghilterra il legno scarseggiava, così iniziarono a usare:", ["A. Il coke importato dalla Russia", "B. Il carbone fossile estratto dal sottosuolo"]),
+      formatta("Cosa fece Napoleone a Notre Dame davanti al Papa?", ["A. Si inginocchiò per ore davanti all'altare", "B. Si mise la corona in testa da solo"])
+    ],
+    4: [
+      formatta("Quale nazione aiutò i coloni fornendo armi e soldati?", ["A. Francia", "B. Spagna"]),
+      formatta("Oltre alla fame e alle tasse, quale altro problema svuotava le casse del re?", ["A. Le spese per aiutare gli americani in guerra", "B. La costruzione di una nuova reggia a Parigi"]),
+      formatta("James Watt inventò un sistema per trasformare il movimento della sua macchina:", ["A. Da verticale a rotatorio", "B. Da rotatorio a verticale"]),
+      formatta("Quale corpo militare fu fondato dai Savoia imitando Napoleone?", ["A. Carabinieri", "B. Corazzieri"])
+    ]
+  };
+
+  const startScreen = [
+    `<span class="nome-gruppo">RIVOLUZIONE AMERICANA</span>`,
+    `<span class="nome-gruppo">RIVOLUZIONE FRANCESE</span>`,
+    `<span class="nome-gruppo">RIVOLUZIONE INDUSTRIALE</span>`,
+    `<span class="nome-gruppo">NAPOLEONE BONAPARTE</span>`
+  ];
+
+  function mostraStart() {
+    document.getElementById('qA').innerHTML = startScreen[0];
+    document.getElementById('qB').innerHTML = startScreen[1];
+    document.getElementById('qC').innerHTML = startScreen[2];
+    document.getElementById('qD').innerHTML = startScreen[3];
+
+    document.querySelectorAll('.btn-lim').forEach(btn => btn.classList.remove('attivo'));
+
+    requestAnimationFrame(adattaTesto);
+  }
+
+  function mostraSet(numero) {
+    const domande = database[numero];
+    if (!domande) return;
+
+    document.getElementById('qA').innerHTML = domande[0];
+    document.getElementById('qB').innerHTML = domande[1];
+    document.getElementById('qC').innerHTML = domande[2];
+    document.getElementById('qD').innerHTML = domande[3];
+
+    document.querySelectorAll('.btn-lim').forEach((btn, index) => {
+      btn.classList.toggle('attivo', index === numero);
+    });
+
+    requestAnimationFrame(adattaTesto);
+  }
+
+  function adattaTesto() {
+    const quadranti = document.querySelectorAll('.quadrante');
+    let minSize = 100;
+
+    // Calcola la dimensione ottimale per ogni quadrante
+    quadranti.forEach(q => {
+      let size = 100;
+      q.style.fontSize = size + 'px';
+      while ((q.scrollHeight > q.clientHeight || q.scrollWidth > q.clientWidth) && size > 8) {
+        size -= 1;
+        q.style.fontSize = size + 'px';
+      }
+      if (size < minSize) minSize = size;
+    });
+
+    // Applica la dimensione più piccola a tutti
+    quadranti.forEach(q => {
+      q.style.fontSize = minSize + 'px';
+    });
+  }
+
+  mostraStart();
+  window.addEventListener('resize', adattaTesto);
+</script>
+
+</body>
+</html>
