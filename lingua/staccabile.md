@@ -102,7 +102,7 @@ C'è qualcosa di strano, vero?
 Staccare il sintagma "a Carcare" ha reso la prima frase incompleta. 
 Il significato del testo non è più lo stesso e la prova è fallita. 
 
-**In questa frase, "a Carcare" è un*argomento del verbo*. Sta dentro al nucleo. È necessario per comprendere la scena.** 
+**In questa frase, "a Carcare" è un *argomento del verbo*. Sta dentro al nucleo. È necessario per comprendere la scena.** 
 
 #### Una nota finale
 
