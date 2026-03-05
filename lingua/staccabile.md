@@ -24,7 +24,7 @@ Se analizzo la **struttura** di questa frase, devo mettere il verbo al centro e 
 Per sapere quante valenze ha il verbo, come sappiamo, devo immaginarmi la scena. Quanti attori servono per recitare il copione di "cucinare"? Normalmente **due**: serve **qualcuno** che cucina e **qualcosa** che viene cucinato. Cucinare è un verbo **bivalente**.
 
 Quando ho dubbi, posso consultare un buon vocabolario, come il vocabolario online del Corriere della sera. 
-[Clicca qui per sapere come usarlo](/lingua/vocabolariovalenza).
+Clicca qui per sapere come usarlo(/lingua/vocabolariovalenza).
 
 Vediamo ora lo schema di questa frase.
 
@@ -69,11 +69,13 @@ Se la risposta è "sì", allora il gruppo di parole **non è un argomento necess
 Facciamo un esempio nuovo, con due frasi che sembrano molto simili.
 
 >1) Annalisa canta a Carcare.
+>
 >2) Annalisa abita a Carcare.
 
 #### Proviamo a staccare *"a Carcare"* dalla prima frase.
 
 >Annalisa canta.
+>
 >**Questo** *avviene* a Carcare.
 
 Siamo riusciti a staccare il gruppo del nome con preposizione "a Carcare" e a farci una seconda frase, che arricchisce la prima e non modifica il significato del testo.
@@ -91,6 +93,7 @@ Al posto del verbo avviene avrei potuto scegliere uno di questi: succede, capita
 #### Proviamo a staccare *"a Carcare"* dalla seconda frase.
 
 >\*Annalisa abita.
+>
 >**Questo** *avviene* a Carcare.
 
 C'è qualcosa di strano, vero? 
