@@ -107,3 +107,41 @@ a[href*="2026-2e"]:visited {
     padding: 0 !important;
   }
 }
+/* 1. Casella Apri/Chiudi */
+details {
+  border: 2px solid #7a9e7e;
+  border-radius: 8px;
+  margin: 1.5em 0;
+  padding: 12px 18px;
+  background-color: #fdfaf5;
+}
+
+summary {
+  color: #7a9e7e;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+details[open] summary {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #7a9e7e;
+  padding-bottom: 8px;
+}
+
+/* 2. Box Approfondimento (Contenitore) */
+.box-info {
+  margin: 1.5em 0;
+  padding: 15px 20px;
+  border: 2px solid #7a9e7e;
+  border-radius: 10px;
+  background-color: #fdfaf5;
+  color: #2d2d2d;
+  line-height: 1.5;
+}
+
+.box-info a {
+  font-weight: bold;
+  text-decoration: underline;
+  /* stile del link nel box */
+}
