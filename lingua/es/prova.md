@@ -1,7 +1,7 @@
 Per svolgere correttamente questi esercizi devi aver compreso che cos'è il **ruolo semantico**. 
 
-<details>
-  <summary>
+<details markdown="1">
+  <summary markdown="1">
 
 Apri questo box per un ripasso breve
   
@@ -30,7 +30,7 @@ Apri questo box per un ripasso breve
 
 </details>
 
-<div class="box-info">
+<div class="box-info" markdown="1">
 
 Per approfondire vai all'appunto sul [ruolo semantico](/lingua/ruolosemantico).
 
