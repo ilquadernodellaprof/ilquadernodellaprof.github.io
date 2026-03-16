@@ -28,13 +28,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #7a9e7e;
 }
 
-a:not(.btn-stampa):not(.btn-torna):not(.font-btn) {
+.page-content a:not(.btn-stampa):not(.btn-torna):not(.font-btn) {
   color: #0097a7;
-  text-decoration: underline dashed;
-}
-
-.site-header a {
-  color: #fdfaf5 !important;
   text-decoration: underline dashed;
 }
 
