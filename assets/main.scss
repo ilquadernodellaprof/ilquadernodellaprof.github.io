@@ -43,6 +43,14 @@ a[href*="2026-2e"] {
 a[href*="2026-2e"]:visited {
   color: #4e3666;
 }
+
+a:not(.btn-stampa):not(.btn-torna):not(.font-btn) {
+  text-decoration: underline;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
 // Controlli pagina
 .page-controls {
   display: flex;
