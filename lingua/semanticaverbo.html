@@ -10,21 +10,6 @@ layout: page
   <p>Per ricordare la parola <strong>semantica</strong>, pensa al <strong>semaforo</strong> (=oggetto che porta il <em>significato</em>).</p>
 </div>
 
-<div class="page-controls">
-  <button class="btn-stampa" onclick="window.print()">🖨 Stampa</button>
-  <button class="font-btn" onclick="cambiaFont(-1)" aria-label="Rimpicciolisci testo">A−</button>
-  <button class="font-btn" onclick="cambiaFont(1)" aria-label="Ingrandisci testo">A+</button>
-</div>
-<script>
-  let dimensione = parseFloat(localStorage.getItem('fontSize')) || 18;
-  document.body.style.fontSize = dimensione + 'px';
-  function cambiaFont(delta) {
-    dimensione = Math.min(Math.max(dimensione + delta * 2, 14), 28);
-    document.body.style.fontSize = dimensione + 'px';
-    localStorage.setItem('fontSize', dimensione);
-  }
-</script>
-
 <style>
   .grid {
     display: grid;
@@ -160,5 +145,3 @@ layout: page
     <li>…ma nel dubbio c'è sempre il vocabolario, che a differenza del lupo non morde 😉</li>
   </ul>
 </div>
-
-<a href="javascript:history.back()" class="btn-torna">← Torna indietro</a>
