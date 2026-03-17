@@ -13,4 +13,4 @@ title: Esercizi di sintassi e semantica
 #### Fai lo schema a raggi delle frasi dell'es. 1
 
 ### Esercizio 3
-#### Per ogni frase dell'es. 1 scrivi quali ruoli semantici riconosci tra questi: agente, paziente, esperiente, possessore, destinatario.
+#### Per ogni frase dell'es. 1 scrivi quali ruoli semantici riconosci tra questi: agente, paziente, esperiente, possessore, destinatario. Attenzione: non tutti i ruoli sono presenti!
