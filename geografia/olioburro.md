@@ -56,3 +56,32 @@ Nel **Regno Unito**, nei **Paesi Bassi** e in **Polonia** non si produce pratica
 ## Territori modellati dalle filiere
 
 Queste filiere hanno plasmato il paesaggio. Se viaggiate nel sud della Spagna vedrete colline coperte di ulivi a perdita d'occhio. Se andate nel nord-ovest della Francia vedrete pascoli verdi con mucche al pascolo. Ogni territorio si è specializzato in ciò che il clima permetteva di produrre meglio, e ancora oggi queste tradizioni agricole definiscono l'economia e la cucina locale.
+
+## La filiera del burro
+
+Il burro si ottiene dal latte, quindi tutto parte dall'allevamento delle mucche. Il latte viene raccolto quotidianamente dalle fattorie e portato nei caseifici, dove viene separato: la parte grassa (la panna) viene poi lavorata meccanicamente fino a diventare burro.
+Le mucche da latte hanno bisogno di pascoli verdi e acqua abbondante. 
+Per questo motivo le zone di produzione si trovano nelle aree più umide e fresche.
+
+Nel **Regno Unito** gli allevamenti si concentrano soprattutto nelle zone occidentali e settentrionali del paese, dove piove molto durante tutto l'anno. I pascoli verdi sono perfetti per le mucche.
+
+Nei **Paesi Bassi** la produzione avviene principalmente nelle zone centrali e settentrionali, dove si trovano i famosi polder. Queste terre pianeggianti, umide e ricche di erba, sono ideali per l'allevamento. I Paesi Bassi sono diventati specialisti anche nell'esportazione: producono molto più burro e formaggio di quanto consumino.
+
+In **Polonia** gli allevamenti si distribuiscono nelle pianure centrali e orientali del paese. La produzione di burro è sempre stata importante nell'economia rurale polacca, che infatti è uno dei principali produttori a livello europeo.
+
+In **Francia** la situazione è divisa: la produzione di burro si concentra nel nord-ovest (zone atlantiche) dove il clima è umido e i pascoli abbondanti. Qui si produce burro di altissima qualità, spesso venduto a prezzi elevati. La Francia del sud, invece, produce pochissimo burro.
+
+## La filiera dell'olio d'oliva
+
+L'olio d'oliva parte dagli oliveti, che crescono solo dove il clima è mediterraneo: inverni miti, estati calde e secche. Gli ulivi impiegano anni a diventare produttivi, ma poi possono vivere anche secoli.
+La raccolta delle olive avviene in autunno: le olive vengono staccate dagli alberi (a mano o con macchine) e portate nei frantoi entro poche ore. Qui vengono lavate, macinate e pressate o centrifugate per estrarre l'olio. 
+
+In **Spagna** la produzione di olio si concentra nel sud del paese, in particolare nell'area meridionale dell'Andalusia (sud ovest), dove si trovano distese infinite di oliveti. La Spagna produce così tanto olio che ne esporta in tutto il mondo.
+
+In **Francia** la produzione di olio è concentrata esclusivamente nel sud-est, nella zona che si affaccia sul Mediterraneo, dal confine con la Liguria fino a Marsiglia e in tutta la Corsica. Qui il clima è adatto agli ulivi. La quantità prodotta è molto inferiore rispetto alla Spagna, ma viene considerata di alta qualità. Il resto della Francia importa olio dai paesi vicini.
+
+Nel **Regno Unito**, nei **Paesi Bassi** e in **Polonia** non si produce praticamente olio d'oliva, perché il clima è troppo freddo per gli ulivi. Questi paesi importano tutto l'olio che consumano, principalmente da Spagna, Italia e Grecia.
+
+## Territori modellati dalle filiere
+
+Queste filiere hanno plasmato il paesaggio. Se viaggiate nel sud della Spagna vedrete colline coperte di ulivi a perdita d'occhio. Se andate nel nord-ovest della Francia vedrete pascoli verdi con mucche al pascolo. Ogni territorio si è specializzato in ciò che il clima permetteva di produrre meglio, e ancora oggi queste tradizioni agricole definiscono l'economia e la cucina locale.
