@@ -1,3 +1,7 @@
+---
+title: Esercizi introduttivi del passivo
+---
+
 ### Fase 1: osservazione e riflessione
 ### ***Osserva***
 #### A. In queste frasi attive il soggetto è ***agente*** (= compie un'azione)
@@ -27,7 +31,8 @@
 * Nelle frasi attive il soggetto è agente, mentre l'oggetto diretto è paziente
 * Nelle frasi passive il soggetto è paziente, mentre l'oggetto indiretto è agente
 * La frase sul sindaco **non può diventare passiva** perché non c'è un **oggetto diretto** con il ruolo di **paziente**!
-* Le frasi dei gruppi C e D **non possono diventare passive** perché il soggetto non è **agente**!
+* Tra le frasi del gruppo C, solo la prima può diventare passiva, perché c'è un oggetto diretto (anche se il suo ruolo **non è** quello di paziente).
+* Le frasi del gruppo D **non possono diventare passive** perché acneh qui manca l'oggetto diretto: il soggetto è **esperiente**, anche se si trova alla fine della !
 
 ### Fase 2: prova tu
 #### 1. In queste frasi devi sottolineare il soggetto e poi scrivere se è agente, paziente o esperiente (oppure nessuno di questi)
