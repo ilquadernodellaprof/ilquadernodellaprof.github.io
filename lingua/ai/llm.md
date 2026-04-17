@@ -7,7 +7,7 @@ title: I concetti fondamentali per comprendere i LLM
   Tocca il titolo per aprire la pagina che ti interessa.
 </div>
 
-<a href="tokenizzazione" class="btn-torna">testo</a> <br>
-<a href="embedding" class="btn-torna">testo</a> <br>
-<a href="attention" class="btn-torna">testo</a> <br>
-<a href="training" class="btn-torna">testo</a>
+<a href="tokenizzazione" class="btn-torna">la tokenizzazione</a> <br>
+<a href="embedding" class="btn-torna">gli embeddings</a> <br>
+<a href="attention" class="btn-torna">l'attention</a> <br>
+<a href="training" class="btn-torna">il training</a>
