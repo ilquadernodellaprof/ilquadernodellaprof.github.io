@@ -1,4 +1,7 @@
-### 1. Tokenizzazione
+---
+title: la tokenizzazione
+---
+
 Un LLM (Large Language Model) è un tipo di intelligenza artificiale che ha imparato a lavorare con il linguaggio leggendo enormi quantità di testi. Il suo obiettivo è capire e produrre frasi in modo coerente, un po’ come farebbe una persona. Non conosce davvero il mondo, ma riconosce schemi: ad esempio quali parole possono funzionare come soggetto, quale verbo richiede certi argomenti, e quali combinazioni hanno senso dal punto di vista sintattico e semantico.
 
 Per riuscire a lavorare con le frasi, però, un LLM deve prima dividerle in unità più piccole e gestibili. Questo primo passaggio è fondamentale perché prepara il testo per tutte le operazioni successive. Si chiama tokenizzazione, ed è il modo in cui l’A.I. “spezza” il linguaggio.
