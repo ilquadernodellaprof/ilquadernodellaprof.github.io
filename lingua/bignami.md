@@ -35,7 +35,7 @@ Questi sono gli argomenti finali da ripassare per il recupero. Non ti dimenticar
 <details>
 <summary>Clicca qui per vedere gli altri argomenti</summary>
 <ul>
-	<li><a href="/staccabile">Clicca qui per la prova della staccabilità</a>, che si fa par riconoscere le espansioni ai margini</li>
-	<li><a href="/ruolosemantico">Clicca qui per approfondire i ruoli semantici</a></li>
+	<li><a href="staccabile">Clicca qui per la prova della staccabilità</a>, che si fa par riconoscere le espansioni ai margini</li>
+	<li><a href="ruolosemantico">Clicca qui per approfondire i ruoli semantici</a></li>
 </ul>
 </details>
