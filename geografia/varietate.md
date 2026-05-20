@@ -1,4 +1,6 @@
-## In varietate concordia
+---
+title: In varietate concordia
+---
 
 Quest'anno abbiamo studiato molto approfonditamente che cosa fa uno Stato e che cos'è una Nazione. 
 
