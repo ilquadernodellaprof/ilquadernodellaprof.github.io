@@ -15,6 +15,9 @@ layout: default
       <button class="btn-dyslexic" onclick="toggleDyslexic()">Dislessia</button>
     </div>
 <script>
+  if (localStorage.getItem('dyslexic') === '1') {
+    document.body.classList.add('dyslexic');
+  }
   let dimensione = parseFloat(localStorage.getItem('fontSize')) || 18;
   document.body.style.fontSize = dimensione + 'px';
   function cambiaFont(delta) {
