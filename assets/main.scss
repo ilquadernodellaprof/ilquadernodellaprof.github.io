@@ -44,6 +44,7 @@ body {
 //     document.body.classList.add('dyslexic');
 //   }
 // </script>
+// similmente si fa con gli altri caratteri da importare in futuro
 
 .site-header {
   background-color: $green;
@@ -52,10 +53,12 @@ body {
   border-bottom: none;
   margin: 12px 12px 0;
   border-radius: 14px;
+  font-family: 'Righteous', sans-serif;
 }
 
 .site-title, .site-title:visited {
   color: #fdfaf5;
+  font-family: 'Righteous', sans-serif;
 }
 
 .site-nav .page-link {
@@ -272,6 +275,7 @@ body.dyslexic .page-content {
 .site-footer {
   background-color: $background-color;
   background-image: none;
+  font-family: 'Righteous', sans-serif;
 }
 
 // ─── Stampa ───────────────────────────────
