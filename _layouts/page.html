@@ -12,17 +12,22 @@ layout: default
       <button class="btn-stampa" onclick="window.print()">🖨 Stampa</button>
       <button class="font-btn" onclick="cambiaFont(-1)" aria-label="Rimpicciolisci testo">A−</button>
       <button class="font-btn" onclick="cambiaFont(1)" aria-label="Ingrandisci testo">A+</button>
+      <button class="btn-dyslexic" onclick="toggleDyslexic()">Dislessia</button>
     </div>
-    <script>
-      let dimensione = parseFloat(localStorage.getItem('fontSize')) || 18;
-      document.body.style.fontSize = dimensione + 'px';
-      function cambiaFont(delta) {
-        dimensione = Math.min(Math.max(dimensione + delta * 2, 14), 28);
-        document.body.style.fontSize = dimensione + 'px';
-        localStorage.setItem('fontSize', dimensione);
-      }
-    </script>
-
+<script>
+  let dimensione = parseFloat(localStorage.getItem('fontSize')) || 18;
+  document.body.style.fontSize = dimensione + 'px';
+  function cambiaFont(delta) {
+    dimensione = Math.min(Math.max(dimensione + delta * 2, 14), 28);
+    document.body.style.fontSize = dimensione + 'px';
+    localStorage.setItem('fontSize', dimensione);
+  }
+  function toggleDyslexic() {
+    const attivo = document.body.classList.toggle('dyslexic');
+    localStorage.setItem('dyslexic', attivo ? '1' : '0');
+  }
+</script>
+    
     {{ content }}
 
     <a href="javascript:history.back()" class="btn-torna">← Torna indietro</a>
