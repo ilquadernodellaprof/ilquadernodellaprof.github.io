@@ -6,14 +6,52 @@ $text-color: #2d2d2d;
 
 @import "minima";
 
+// ─────────────────────────────────────────
+// GRIGLIA BASE
+// $lh usato per margini e padding uniformi.
+// ─────────────────────────────────────────
+$lh: 28px;
+$green:       #9ec4a0;
+$green-dark:  #6a9e6e;
+
+// ─── Body ─────────────────────────────────
 body {
   background-color: $background-color;
+  line-height: $lh;
 }
 
+// ─── Sfondo a puntini su .page-content ────
+// Stile Leuchtturm: puntini 2px, spaziatura 20px.
+.page-content {
+  background-color: $background-color;
+  background-image: radial-gradient(
+    circle,
+    rgba(160,150,138,0.25) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 20px 20px;
+  padding-top: $lh !important;
+}
+
+// ─── Header staccato dai bordi ────────────
+// NOTA: aggiungere in _includes/head.html:
+// <link rel="preconnect" href="https://fonts.googleapis.com">
+// <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+// <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+//
+// <script>
+//   if (localStorage.getItem('dyslexic') === '1') {
+//     document.body.classList.add('dyslexic');
+//   }
+// </script>
+
 .site-header {
-  background-color: #7a9e7e;
+  background-color: $green;
+  background-image: none;
   border-top: none;
   border-bottom: none;
+  margin: 12px 12px 0;
+  border-radius: 14px;
 }
 
 .site-title, .site-title:visited {
@@ -24,57 +62,219 @@ body {
   color: #fdfaf5;
 }
 
+// ─── Titoli ───────────────────────────────
 h1, h2, h3, h4, h5, h6 {
-  color: #7a9e7e;
+  color: $green;
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+  margin-top: $lh * 2;
+  margin-bottom: 0;
 }
 
-.page-content a:not(.btn-stampa):not(.btn-torna):not(.font-btn) {
+h1 {
+  font-size: 1.75rem;
+  line-height: $lh * 2;
+  margin-top: $lh;
+}
+
+h2 {
+  font-size: 1.3125rem;
+  line-height: $lh;
+}
+
+h3, h4, h5, h6 {
+  font-size: 1.09375rem;
+  line-height: $lh;
+}
+
+// ─── Paragrafi ────────────────────────────
+p {
+  margin-top: 0;
+  margin-bottom: $lh;
+}
+
+// ─── Link ─────────────────────────────────
+.page-content a:not(.btn-stampa):not(.btn-torna):not(.font-btn):not(.btn-dyslexic) {
   color: #0097a7;
   text-decoration: underline dashed;
 }
 
-// Controlli pagina
+// ─── Controlli pagina ─────────────────────
 .page-controls {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 15px 0;
+  margin: $lh 0;
+  flex-wrap: wrap;
 }
 
+// ─── Bottone Stampa ───────────────────────
 .btn-stampa {
-  padding: 10px 20px;
+  padding: 10px 22px;
   cursor: pointer;
-  background-color: #7a9e7e;
+  background-color: $green;
   color: white;
-  border: none;
-  border-radius: 5px;
+  border: 1.5px solid $green-dark;
+  border-radius: 22px;
   font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: transform 0.1s ease;
+}
+.btn-stampa:hover {
+  transform: scale(1.03);
 }
 
+// ─── Font Buttons (A / A) ─────────────────
 .font-btn {
   padding: 6px 14px;
-  border: 2px solid #7a9e7e;
-  border-radius: 8px;
-  background: #fdfaf5;
+  border: 1.5px solid $green;
+  border-radius: 14px;
+  background: rgba(253,250,245,0.9);
   color: #2d2d2d;
   font-family: Georgia, serif;
   cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.font-btn:hover {
+  transform: scale(1.03);
 }
 .font-btn:first-of-type { font-size: 0.85em; }
 .font-btn:last-of-type  { font-size: 1.1em; font-weight: bold; }
 
-.btn-torna {
-  display: inline-block;
-  padding: 10px 20px;
-  cursor: pointer;
-  background-color: #a8c5a8;
+// ─── Bottone OpenDyslexic ─────────────────
+.btn-dyslexic {
+  padding: 6px 14px;
+  border: 1.5px solid $green;
+  border-radius: 14px;
+  background: #fdfaf5;
   color: #2d2d2d;
-  border-radius: 5px;
-  margin: 15px 0;
-  font-family: sans-serif;
-  text-decoration: none;
+  font-family: Georgia, serif;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.btn-dyslexic:hover {
+  transform: scale(1.03);
+}
+body.dyslexic .btn-dyslexic {
+  background: $green;
+  color: white;
+  border-color: $green-dark;
 }
 
+// ─── Bottone Torna ────────────────────────
+.btn-torna {
+  display: inline-block;
+  padding: 10px 22px;
+  cursor: pointer;
+  background: #fdf8e2;
+  color: #2d2d2d;
+  border: 1.5px solid #e8dfa0;
+  border-radius: 22px;
+  margin: $lh 0;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.95em;
+  text-decoration: none;
+  transition: transform 0.1s ease;
+}
+.btn-torna:hover {
+  transform: scale(1.03);
+}
+
+// ─── Details ──────────────────────────────
+details {
+  border: 1.5px solid #c5ddc6;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: $lh 0;
+  background: #eef6ef;
+}
+
+summary {
+  color: $green-dark;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.05em;
+  line-height: $lh;
+}
+
+details[open] summary {
+  margin-bottom: 14px;
+  border-bottom: 1.5px dashed #c5ddc6;
+  padding-bottom: 14px;
+}
+
+// ─── Box Approfondimento (giallo) ─────────
+.box-info {
+  margin: $lh 0;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: #fdf8e2;
+  border: 1.5px solid #e8dfa0;
+  color: #2d2d2d;
+  line-height: $lh;
+}
+
+.box-info a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+// ─── Box Nota (fragola pastello) ──────────
+// border-left spesso: segnale non cromatico per daltonici
+.box-nota {
+  background: #fdeef0;
+  border: 1.5px solid #f0b8c0;
+  border-left: 5px solid #e08090;
+}
+
+// ─── OpenDyslexic ─────────────────────────
+// Metti i file font in assets/fonts/ e
+// verifica che i nomi corrispondano a quelli
+// presenti nel tuo zip.
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('/assets/fonts/OpenDyslexic-Regular.woff2') format('woff2'),
+       url('/assets/fonts/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('/assets/fonts/OpenDyslexic-Bold.woff2') format('woff2'),
+       url('/assets/fonts/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body.dyslexic .page-content,
+body.dyslexic .page-content p,
+body.dyslexic .page-content li,
+body.dyslexic .box-info,
+body.dyslexic details {
+  font-family: 'OpenDyslexic', sans-serif;
+  font-size: 0.95em;
+  line-height: 1.8;
+}
+
+// Quando OpenDyslexic è attivo i puntini spariscono —
+// i pattern ripetuti possono dare fastidio a chi ha
+// sensibilità visiva associata alla dislessia.
+body.dyslexic .page-content {
+  background-image: none;
+}
+
+// ─── Footer ───────────────────────────────
+.site-footer {
+  background-color: $background-color;
+  background-image: none;
+}
+
+// ─── Stampa ───────────────────────────────
 @media print {
   [role="banner"],
   .footer-col-wrapper,
@@ -82,6 +282,13 @@ h1, h2, h3, h4, h5, h6 {
   .page-controls,
   .btn-torna {
     display: none !important;
+  }
+  .page-content {
+    background-image: none;
+  }
+  .site-header {
+    margin: 0;
+    border-radius: 0;
   }
   .site-footer::after {
     content: "Contenuto curato da Lucia Capurri, distribuito con licenza CC-BY-NC a scopo didattico.";
@@ -96,42 +303,4 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 !important;
     padding: 0 !important;
   }
-}
-/* 1. Casella Apri/Chiudi */
-details {
-  border: 2px solid #7a9e7e;
-  border-radius: 8px;
-  margin: 1.5em 0;
-  padding: 12px 18px;
-  background-color: #fdfaf5;
-}
-
-summary {
-  color: #7a9e7e;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-}
-
-details[open] summary {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #7a9e7e;
-  padding-bottom: 8px;
-}
-
-/* 2. Box Approfondimento (Contenitore) */
-.box-info {
-  margin: 1.5em 0;
-  padding: 15px 20px;
-  border: 2px solid #7a9e7e;
-  border-radius: 10px;
-  background-color: #fdfaf5;
-  color: #2d2d2d;
-  line-height: 1.5;
-}
-
-.box-info a {
-  font-weight: bold;
-  text-decoration: underline;
-  /* stile del link nel box */
 }
