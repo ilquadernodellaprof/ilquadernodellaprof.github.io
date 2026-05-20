@@ -10,3 +10,5 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+
+version: "2.0"
