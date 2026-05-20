@@ -17,5 +17,4 @@ Nell'anno scolastico 1999/2000, in più di 2500 classi delle medie e delle super
 
 L'idea era che l'Europa del nuovo millennio dovesse vivere in pace e non ricorrere più alla guerra per risolvere i problemi. Forse era un sogno, ma si diceva che le tante diversità tra gli europei **non dovessero essere un motivo di divisione, ma il simbolo dell'unità**.
 
-#### Ritenete che sia possibile vivere così, o i popoli europei sono troppo diversi per farlo davvero? 
-#### Ci può essere unità nella diversità, o è necessario fare prima il bene della propria nazione?
+# Ritenete che sia possibile vivere così, o i popoli europei sono troppo diversi per farlo davvero? Ci può essere unità nella diversità, o è necessario fare prima il bene della propria nazione?
