@@ -1,4 +1,4 @@
-const CACHE_NAME = 'quaderno-v2';
+const CACHE_NAME = 'quaderno-v3';
 
 self.addEventListener('install', event => {
   event.waitUntil(
