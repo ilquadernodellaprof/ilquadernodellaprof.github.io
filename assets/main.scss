@@ -285,7 +285,81 @@ body.dyslexic .page-content {
 .site-footer {
   background-color: $background-color;
   background-image: none;
+  border-top: 1px solid #e0dbd0;
+  padding: 20px;
   font-family: 'Righteous', sans-serif;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.footer-attribution {
+  font-size: 0.78rem;
+  color: #424242;
+  margin: 0;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-site-title {
+  font-size: 1.1rem;
+  color: $green;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-about,
+.card-contatti {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 8px 0;
+  border-radius: 22px;
+  color: #2d2d2d;
+  text-decoration: none;
+  white-space: nowrap;
+  text-align: center;
+  flex: 1;
+}
+
+.card-about {
+  background: #fdf8e2;
+  border: 1.5px solid #e8dfa0;
+}
+
+.card-contatti {
+  background: #fdeef0;
+  border: 1.5px solid #f0b8c0;
+}
+
+.footer-duck {
+  height: 36px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+@media (min-width: 600px) {
+  .footer-inner    { flex-direction: row; align-items: center; }
+  .footer-left     { width: 50%; }
+  .footer-right    { width: 50%; align-items: flex-end; }
 }
 
 // ─── Stampa ───────────────────────────────
@@ -293,6 +367,7 @@ body.dyslexic .page-content {
   [role="banner"],
   .footer-col-wrapper,
   .footer-heading,
+  .footer-inner,
   .page-controls,
   .btn-torna {
     display: none !important;
