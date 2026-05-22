@@ -13,7 +13,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Righteous&display=swap" rel="stylesheet">
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js');
-    }
+  navigator.serviceWorker.getRegistrations().then(registrations => {
+    registrations.forEach(reg => reg.unregister());
+  }).then(() => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
   </script>
 </head>
