@@ -7,5 +7,7 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-
-version: "5.0"
+version: "6.0"
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
