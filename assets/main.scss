@@ -1,18 +1,95 @@
 ---
 ---
 
+// ─── Variabili ────────────────────────────
 $background-color: #fdfaf5;
-$text-color: #2d2d2d;
+$text-color:       #2d2d2d;
+$lh:               28px;
+$green:            #9ec4a0;
+$green-dark:       #6a9e6e;
 
-@import "minima";
+// ─── Reset base ───────────────────────────
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+// ─── Wrapper ──────────────────────────────
+.wrapper {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// ─── Liste ────────────────────────────────
+ul, ol {
+  margin: 0 0 $lh 0;
+  padding-left: 2em;
+}
+li { margin-bottom: 4px; }
+
+// ─── Codice ───────────────────────────────
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.88em;
+  background: #f0ece4;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+pre {
+  background: #f0ece4;
+  border-radius: 8px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+pre code { background: none; padding: 0; font-size: 0.85em; }
+
+// ─── Citazioni ────────────────────────────
+blockquote {
+  border-left: 4px solid $green;
+  margin: 0 0 $lh 0;
+  padding: 4px 16px;
+  color: #6b6560;
+  font-style: italic;
+}
+
+// ─── Tabelle ──────────────────────────────
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $lh 0;
+  font-size: 0.95em;
+}
+th, td {
+  border: 1px solid #d0ccc4;
+  padding: 8px 12px;
+  text-align: left;
+}
+th {
+  background: $green;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+}
+tr:nth-child(even) { background: #f7f3ec; }
+
+// ─── Immagini ─────────────────────────────
+img { max-width: 100%; height: auto; }
+
+// ─── Post layout ──────────────────────────
+.post-header { margin-bottom: $lh; }
+.post-title  { margin-top: 0; }
 
 // ─────────────────────────────────────────
 // GRIGLIA BASE
 // $lh usato per margini e padding uniformi.
 // ─────────────────────────────────────────
-$lh: 28px;
-$green:       #9ec4a0;
-$green-dark:  #6a9e6e;
 
 // ─── Body ─────────────────────────────────
 body {
@@ -21,7 +98,6 @@ body {
 }
 
 // ─── Sfondo a puntini su .page-content ────
-// Stile Leuchtturm: puntini 2px, spaziatura 20px.
 .page-content {
   background-color: $background-color;
   background-image: radial-gradient(
@@ -34,18 +110,6 @@ body {
 }
 
 // ─── Header staccato dai bordi ────────────
-// NOTA: aggiungere in _includes/head.html:
-// <link rel="preconnect" href="https://fonts.googleapis.com">
-// <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-// <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
-//
-// <script>
-//   if (localStorage.getItem('dyslexic') === '1') {
-//     document.body.classList.add('dyslexic');
-//   }
-// </script>
-// similmente si fa con gli altri caratteri da importare in futuro
-
 .site-header {
   background-color: $green;
   background-image: none;
@@ -227,7 +291,6 @@ details[open] summary {
 }
 
 // ─── Box Nota (fragola pastello) ──────────
-// border-left spesso: segnale non cromatico per daltonici
 .box-nota {
   background: #fdeef0;
   border: 1.5px solid #f0b8c0;
@@ -235,10 +298,6 @@ details[open] summary {
 }
 
 // ─── OpenDyslexic ─────────────────────────
-// Metti i file font in assets/fonts/ e
-// verifica che i nomi corrispondano a quelli
-// presenti nel tuo zip.
-
 @font-face {
   font-family: 'OpenDyslexic';
   src: url('/assets/fonts/OpenDyslexic-Regular.otf') format('opentype');
@@ -274,9 +333,6 @@ body.dyslexic details {
   line-height: 1.8;
 }
 
-// Quando OpenDyslexic è attivo i puntini spariscono —
-// i pattern ripetuti possono dare fastidio a chi ha
-// sensibilità visiva associata alla dislessia.
 body.dyslexic .page-content {
   background-image: none;
 }
