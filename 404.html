@@ -1,0 +1,152 @@
+---
+layout: dafault
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – Pagina non trovata · Il Quaderno della Prof</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Righteous&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #fdfaf5;
+      --green:      #9ec4a0;
+      --green-dark: #6a9e6e;
+      --text:       #2d2d2d;
+      --text-soft:  #6b6560;
+      --dot:        rgba(160,150,138,0.22);
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: radial-gradient(circle, var(--dot) 1.5px, transparent 1.5px);
+      background-size: 20px 20px;
+      color: var(--text);
+      font-family: Georgia, serif;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .duck-wrap {
+      position: relative;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: popIn .6s cubic-bezier(.34,1.56,.64,1) .2s forwards;
+    }
+
+    .duck-wrap img {
+      width: clamp(90px, 22vw, 140px);
+      height: auto;
+      filter: drop-shadow(0 8px 18px rgba(106,158,110,.25));
+      animation: wobble 4s ease-in-out 1s infinite;
+    }
+
+    .badge-404 {
+      position: absolute;
+      top: -10px;
+      right: -14px;
+      background: var(--green);
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 4px 12px;
+      border-radius: 50px;
+      box-shadow: 0 3px 10px rgba(106,158,110,.3);
+    }
+
+    h1 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      color: var(--green-dark);
+      line-height: 1.2;
+      margin-bottom: .8rem;
+      opacity: 0;
+      animation: fadeUp .6s ease .45s forwards;
+    }
+
+    .subtitle {
+      font-size: clamp(.95rem, 2.5vw, 1.1rem);
+      color: var(--text-soft);
+      max-width: 34ch;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp .6s ease .6s forwards;
+    }
+
+    .btn-home {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--green);
+      color: white;
+      border: 1.5px solid var(--green-dark);
+      border-radius: 22px;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform .15s ease, box-shadow .15s ease;
+      opacity: 0;
+      animation: fadeUp .6s ease .75s forwards;
+    }
+    .btn-home:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(106,158,110,.3);
+    }
+
+    /* ── Keyframes ── */
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(.6) rotate(-8deg); }
+      to   { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    @keyframes wobble {
+      0%,100% { transform: rotate(-3deg); }
+      50%      { transform: rotate(3deg); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="duck-wrap">
+      <img
+        src="/assets/icons/drowning.png"
+        alt="Paperella smarrita"
+        width="140"
+        height="140"
+      />
+      <span class="badge-404">404</span>
+    </div>
+
+    <h1>Questa pagina si è persa!</h1>
+    <p class="subtitle">
+      Forse l'indirizzo è sbagliato, o forse la pagina è stata spostata.<br>
+      Torna alla home e riprova da lì.
+    </p>
+    <a href="/" class="btn-home">← Torna al Quaderno</a>
+  </main>
+</body>
+</html>
