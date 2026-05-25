@@ -1,0 +1,35 @@
+<!-- ══ CONTATTI ══ -->
+  <section id="contatti">
+    <div class="contact-inner reveal">
+      <div class="section-label" style="justify-content:center;">Contatti</div>
+      <h2>Scrivimi</h2>
+      <p>Compila tutte le caselle e premi invio per contattarmi.</p>
+
+      <!--
+        Documentazione: https://formsubmit.co
+      -->
+      <form action="https://formsubmit.co/035d52e2110a2b0d2a74eba5232c76b7" method="POST">
+        <input type="hidden" name="_next"    value="https://ilquadernodellaprof.github.io/about/grazie" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text"   name="_honey"   style="display:none" />
+
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required placeholder="Il tuo nome" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="La tua email" />
+        </div>
+        <div class="form-group">
+          <label for="messaggio">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" required placeholder="Scrivi qui…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-form">Invia messaggio</button>
+          <p style="font-size:.8rem; color:var(--text-soft); text-align:center; margin-top:1rem;">
+          Inviando il modulo accetti il trattamento dei dati secondo la 
+          <a href="/privacy" style="color:var(--sage);">informativa sulla privacy</a>.
+        </p>
+      </form>
+    </div>
+  </section>
