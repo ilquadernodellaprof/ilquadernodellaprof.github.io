@@ -1,4 +1,4 @@
-const CACHE_NAME = 'quaderno-v6';
+const CACHE_NAME = 'quaderno-v7';
 
 self.addEventListener('install', event => {
   self.skipWaiting(); // attiva subito il nuovo SW senza aspettare
