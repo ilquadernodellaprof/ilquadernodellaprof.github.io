@@ -228,7 +228,7 @@ p {
   border-radius: 14px;
   background: #fdfaf5;
   color: #2d2d2d;
-  font-family: Georgia, serif;
+  font-family: 'OpenDyslexic', Georgia, serif;
   font-size: 0.95em;
   cursor: pointer;
   transition: transform 0.1s ease;
@@ -240,6 +240,7 @@ body.dyslexic .btn-dyslexic {
   background: $green;
   color: white;
   border-color: $green-dark;
+  font-family: Georgia, serif;
 }
 
 // ─── Bottone Torna ────────────────────────
