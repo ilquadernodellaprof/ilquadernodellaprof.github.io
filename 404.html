@@ -1,6 +1,7 @@
 ---
 layout: null
 permalink: /404.html
+title: "404 – Pagina non trovata"
 ---
 <!DOCTYPE html>
 <html lang="it">
@@ -11,30 +12,14 @@ permalink: /404.html
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Righteous&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:         #fdfaf5;
-      --green:      #9ec4a0;
-      --green-dark: #6a9e6e;
-      --text:       #2d2d2d;
-      --text-soft:  #6b6560;
-      --dot:        rgba(160,150,138,0.22);
-    }
-
     body {
-      background-color: var(--bg);
-      background-image: radial-gradient(circle, var(--dot) 1.5px, transparent 1.5px);
-      background-size: 20px 20px;
-      color: var(--text);
-      font-family: Georgia, serif;
       min-height: 100svh;
       display: flex;
       flex-direction: column;
     }
 
-    /* ── Main ── */
     main {
       flex: 1;
       display: flex;
@@ -63,7 +48,7 @@ permalink: /404.html
       position: absolute;
       top: -10px;
       right: -14px;
-      background: var(--green);
+      background: #9ec4a0;
       color: white;
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
@@ -73,11 +58,11 @@ permalink: /404.html
       box-shadow: 0 3px 10px rgba(106,158,110,.3);
     }
 
-    h1 {
+    .error-title {
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
       font-size: clamp(1.6rem, 5vw, 2.4rem);
-      color: var(--green-dark);
+      color: #6a9e6e;
       line-height: 1.2;
       margin-bottom: .8rem;
       opacity: 0;
@@ -86,7 +71,7 @@ permalink: /404.html
 
     .subtitle {
       font-size: clamp(.95rem, 2.5vw, 1.1rem);
-      color: var(--text-soft);
+      color: #6b6560;
       max-width: 34ch;
       line-height: 1.65;
       margin-bottom: 2rem;
@@ -97,9 +82,9 @@ permalink: /404.html
     .btn-home {
       display: inline-block;
       padding: 12px 28px;
-      background: var(--green);
+      background: #9ec4a0;
       color: white;
-      border: 1.5px solid var(--green-dark);
+      border: 1.5px solid #6a9e6e;
       border-radius: 22px;
       font-family: sans-serif;
       font-weight: bold;
@@ -114,7 +99,20 @@ permalink: /404.html
       box-shadow: 0 6px 18px rgba(106,158,110,.3);
     }
 
-    /* ── Keyframes ── */
+    .attribution {
+      text-align: center;
+      font-size: .72rem;
+      color: #b0a89e;
+      padding: .6rem 1rem 1rem;
+    }
+    .attribution a {
+      color: #b0a89e;
+      text-decoration: none;
+    }
+    .attribution a:hover {
+      text-decoration: underline;
+    }
+
     @keyframes popIn {
       from { opacity: 0; transform: scale(.6) rotate(-8deg); }
       to   { opacity: 1; transform: scale(1) rotate(0deg); }
@@ -130,25 +128,33 @@ permalink: /404.html
   </style>
 </head>
 <body>
+
   {% include header.html %}
+
   <main>
     <div class="duck-wrap">
       <img
         src="/assets/icons/drowning.png"
-        alt="Paperella smarrita"
+        alt="Paperella che affonda"
         width="140"
         height="140"
       />
       <span class="badge-404">404</span>
     </div>
 
-    <h1>Questa pagina si è persa!</h1>
+    <p class="error-title">Questa pagina si è persa!</p>
     <p class="subtitle">
       Forse l'indirizzo è sbagliato, o forse la pagina è stata spostata.<br>
       Torna alla home e riprova da lì.
     </p>
-    <a href="/" class="btn-home">← Torna al Quaderno</a>
+    <a href="/" class="btn-home">&larr; Torna al Quaderno</a>
   </main>
+
   {% include footer.html %}
+
+  <p class="attribution">
+    <a href="https://www.flaticon.com/free-icons/duck" title="duck icons">Duck icons created by vectorsmarket15 - Flaticon</a>
+  </p>
+
 </body>
 </html>
