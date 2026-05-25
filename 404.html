@@ -18,6 +18,8 @@ title: "404 – Pagina non trovata"
       min-height: 100svh;
       display: flex;
       flex-direction: column;
+      background-image: radial-gradient(circle, rgba(160,150,138,0.25) 1.5px, transparent 1.5px);
+      background-size: 20px 20px;
     }
 
     main {
@@ -150,11 +152,15 @@ title: "404 – Pagina non trovata"
     <a href="/" class="btn-home">&larr; Torna al Quaderno</a>
   </main>
 
-  {% include footer.html %}
-
-  <p class="attribution">
-    <a href="https://www.flaticon.com/free-icons/duck" title="duck icons">Duck icons created by vectorsmarket15 - Flaticon</a>
-  </p>
+  <footer class="footer-404">
+    <div class="footer-404-content">
+      <img src="/assets/icons/icon-192.png" alt="" class="footer-duck-icon" />
+      <span>Il Quaderno della Prof · Lucia Capurri · <a href="/about/">Chi sono</a></span>
+    </div>
+    <p class="footer-attribution">
+      <a href="https://www.flaticon.com/free-icons/duck" title="duck icons">Duck icons created by vectorsmarket15 - Flaticon</a>
+    </p>
+  </footer>
 
 </body>
 </html>
