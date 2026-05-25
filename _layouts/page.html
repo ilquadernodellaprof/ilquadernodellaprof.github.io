@@ -2,21 +2,20 @@
 layout: default
 ---
 <article class="post">
-
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
-
   <div class="post-content">
     <div class="page-controls">
       <button class="btn-stampa" onclick="window.print()">🖨 Stampa</button>
       <button class="font-btn" onclick="cambiaFont(-1)" aria-label="Rimpicciolisci testo">A−</button>
       <button class="font-btn" onclick="cambiaFont(1)" aria-label="Ingrandisci testo">A+</button>
-      <button class="btn-dyslexic" onclick="toggleDyslexic()">Dislessia</button>
+      <button class="btn-dyslexic" onclick="toggleDyslexic()">Spazioso</button>
     </div>
 <script>
   if (localStorage.getItem('dyslexic') === '1') {
     document.body.classList.add('dyslexic');
+    document.querySelector('.btn-dyslexic').textContent = 'Ristretto';
   }
   let dimensione = parseFloat(localStorage.getItem('fontSize')) || 18;
   document.body.style.fontSize = dimensione + 'px';
@@ -28,12 +27,11 @@ layout: default
   function toggleDyslexic() {
     const attivo = document.body.classList.toggle('dyslexic');
     localStorage.setItem('dyslexic', attivo ? '1' : '0');
+    document.querySelector('.btn-dyslexic').textContent = attivo ? 'Ristretto' : 'Spazioso';
   }
 </script>
     
     {{ content }}
-
     <a href="javascript:history.back()" class="btn-torna">← Torna indietro</a>
   </div>
-
 </article>
