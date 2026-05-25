@@ -473,41 +473,8 @@ layout: null
     </div>
   </section>
 --> <!-- per ripristinare l'area ex alunni decommenta qui e una trentina di righe sopra a questa -->
-  <!-- ══ CONTATTI ══ -->
-  <section id="contatti">
-    <div class="contact-inner reveal">
-      <div class="section-label" style="justify-content:center;">Contatti</div>
-      <h2>Scrivimi</h2>
-      <p>Compila tutte le caselle e premi invio per contattarmi.</p>
 
-      <!--
-        FormSubmit — istruzioni:
-        1. Sostituisci YOUR@EMAIL.COM con la tua email reale.
-        2. Al primo invio riceverai una mail di attivazione da confermare (una volta sola).
-        3. Aggiorna il valore di _next con l'URL esatto di questa pagina.
-        Documentazione: https://formsubmit.co
-      -->
-      <form action="https://formsubmit.co/035d52e2110a2b0d2a74eba5232c76b7" method="POST">
-        <input type="hidden" name="_next"    value="https://ilquadernodellaprof.github.io/about/grazie" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="text"   name="_honey"   style="display:none" />
-
-        <div class="form-group">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" required placeholder="Il tuo nome" />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="La tua email" />
-        </div>
-        <div class="form-group">
-          <label for="messaggio">Messaggio</label>
-          <textarea id="messaggio" name="messaggio" required placeholder="Scrivi qui…"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-form">Invia messaggio</button>
-      </form>
-    </div>
-  </section>
+  {% include contacts.html %}
 
   <!-- ══ FOOTER ══ -->
   <footer>
