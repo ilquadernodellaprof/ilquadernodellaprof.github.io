@@ -2,7 +2,7 @@
 title: Tutto in una pagina
 ---
 
-L'attivatore che realizziamo alla fine della lettura di un libro serve a mettere tutto quello che serve quanto in una sola pagina. 
+L'attivatore che realizziamo alla fine della lettura di un libro serve a mettere tutto quello che serve in una sola pagina. 
 Quando un domani vorremo ricordarci non solo di cosa parlava il libro, ma come il libro ha parlato a noi come lettori, potremo riguardarlo per ricordarci con una sola occhiata cosa ci aveva colpito e che significato gli avevamo dato.
 
 ## Istruzioni
@@ -27,8 +27,8 @@ Quando un domani vorremo ricordarci non solo di cosa parlava il libro, ma come i
 
 </div>
 
-Siccome è più facile a farlo che a spiegarlo, te ne metto uno qua sotto. Se non lo vedi bene, prova a mettere il cellulare in orizzontale. Altrimenti [clicca qui](/lettura/unapag/coraline.jpg) per aprirlo su un altra pagina.
+Siccome è più facile a farlo che a spiegarlo, te ne metto uno qua sotto. Se non lo vedi bene, prova a mettere il cellulare in orizzontale. Altrimenti <a href="/lettura/img/coraline.jpg" target="_blank">clicca qui</a> per aprirlo su un altra pagina.
 
 <details>
 <summary>Apri l'esempio</summary>
-<img src="/lettura/unapag/coraline.jpg" alt="Tutto Coraline in una pagina" width="794" height="1123" loading="lazy" style="max-width: 100%; height: auto;"> </details>
+Per farlo, ci ho messo un'ora: non ci vuole solo a te tanto tempo! <br> <img src="/lettura/img/coraline.jpg" alt="Tutto Coraline in una pagina" width="794" height="1123" loading="lazy" style="max-width: 100%; height: auto;"> </details>
