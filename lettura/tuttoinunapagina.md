@@ -1,11 +1,13 @@
-# Pagina in costruzione
+---
+title: Tutto in una pagina
+---
 
-<!-- L'attivatore che realizziamo alla fine della lettura di un libro serve a metterlo tutto quanto in un pagina. Quando un domani vorremo ricordarci non solo di cosa parlava il libro, ma come il libro ha parlato a noi come lettori, potremo riguardarlo per ricordarci con una sola occhiata cosa ci aveva colpito e che significato gli avevamo dato. -->
+L'attivatore che realizziamo alla fine della lettura di un libro serve a mettere tutto quello che serve quanto in una sola pagina. 
+Quando un domani vorremo ricordarci non solo di cosa parlava il libro, ma come il libro ha parlato a noi come lettori, potremo riguardarlo per ricordarci con una sola occhiata cosa ci aveva colpito e che significato gli avevamo dato.
 
-## Sarà caricata venerdì 5 giugno pomeriggio.
-<!-- Il precedente diventa istruzioni -->
+## Istruzioni
 
-<div style="display:none">
+<div class="box-info" markdown="1">
 
 1. Prendi un foglio del tuo quaderno e dividilo idealmente in sei parti. L'attivatore deve occupare tutta la pagina e deve essere bello da vedere: se no non ci tornerai mai a vederlo! Sì, deve richiederti un po' di tempo per farlo.
 
@@ -25,11 +27,8 @@
 
 </div>
 
-<!-- Siccome è più facile a farlo che a spiegarlo, te ne metto uno qua sotto. Se non lo vedi bene, prova a mettere il cellulare in orizzontale. Altrimenti [clicca qui](/lettura/unapag/coraline.jpg) per aprirlo su un altra pagina. -->
+Siccome è più facile a farlo che a spiegarlo, te ne metto uno qua sotto. Se non lo vedi bene, prova a mettere il cellulare in orizzontale. Altrimenti [clicca qui](/lettura/unapag/coraline.jpg) per aprirlo su un altra pagina.
 
 <details>
 <summary>Apri l'esempio</summary>
-
-In costruzione. Torna venerdì sera.
-
-<!-- <img src="/lettura/unapag/coraline.jpg" alt="Tutto Coraline in una pagina" width="794" height="1123" loading="lazy" style="max-width: 100%; height: auto;"> --> </details>
+<img src="/lettura/unapag/coraline.jpg" alt="Tutto Coraline in una pagina" width="794" height="1123" loading="lazy" style="max-width: 100%; height: auto;"> </details>
