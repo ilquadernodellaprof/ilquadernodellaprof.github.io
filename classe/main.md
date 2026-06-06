@@ -1,6 +1,7 @@
 ---
+layout: arrivederci
+period: scoiattoli
 classe: lampone
-title: Cartelle
 ---
 Da questo folder si aprono le cartelle delle classi. 
 
