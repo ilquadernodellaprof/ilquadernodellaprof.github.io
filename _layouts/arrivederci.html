@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+{% comment %} ── Logica period ────────────────────────────── {% endcomment %}
+{% assign p = page.period %}
+
+{% if p == "summer" %}
+  {% assign vacanze_titolo = "Buone vacanze!" %}
+  {% assign titolo_colore  = "#3d6bb5" %}
+  {% assign details_color  = "#3d6bb5" %}
+  {% assign vacanze_img    = "/assets/icons/travel.png" %}
+  {% assign vacanze_alt    = "Estate!" %}
+{% elsif p == "winter" %}
+  {% assign vacanze_titolo = "Buone vacanze!" %}
+  {% assign titolo_colore  = "#ad1457" %}
+  {% assign details_color  = "#ad1457" %}
+  {% assign vacanze_img    = "/assets/icons/icon-512.png" %}
+  {% assign vacanze_alt    = "Fate i buoni!" %}
+{% else %}
+  {% assign vacanze_titolo = "Arrivederci " | append: p | append: "! ❤️" %}
+  {% if page.classe == "melanzana"     %}{% assign titolo_colore = "#6b4c8a" %}
+  {% elsif page.classe == "notte"      %}{% assign titolo_colore = "#2c4a7c" %}
+  {% elsif page.classe == "lampone"    %}{% assign titolo_colore = "#ad1457" %}
+  {% elsif page.classe == "fiordaliso" %}{% assign titolo_colore = "#3d6bb5" %}
+  {% elsif page.classe == "senape"     %}{% assign titolo_colore = "#c17f24" %}
+  {% else %}{% assign titolo_colore = "#6a9e6e" %}
+  {% endif %}
+  {% assign details_color = titolo_colore %}
+  {% assign vacanze_img   = "/assets/icons/ducklings.png" %}
+  {% assign vacanze_alt   = "Arrivederci, ragazzi..." %}
+{% endif %}
+
+<style>
+  .arrivederci-hero {
+    margin-bottom: {{ site.data.lh | default: "28px" }};
+    text-align: center;
+  }
+  .arrivederci-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 18px;
+    display: block;
+    margin: 0 auto;
+  }
+  .arrivederci-page details {
+    border-color: {{ details_color }};
+    background: {{ details_color }}18;
+  }
+  .arrivederci-page details summary {
+    color: {{ details_color }};
+  }
+  .arrivederci-page details[open] summary {
+    border-bottom-color: {{ details_color }}88;
+  }
+</style>
+
+<article class="post arrivederci-page">
+
+  <header class="arrivederci-hero">
+    <img
+      src="{{ vacanze_img | relative_url }}"
+      alt="{{ vacanze_alt }}"
+      class="arrivederci-img"
+    />
+    <h1 style="color: {{ titolo_colore }};">
+      {{ vacanze_titolo }}
+    </h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+    {% include contacts.html %}
+  </div>
+
+</article>
