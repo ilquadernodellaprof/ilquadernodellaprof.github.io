@@ -1,6 +1,7 @@
 ---
 layout: arrivederci
 period: summer
+classe: fiordaliso
 ---
 Da questo folder si aprono le cartelle delle classi. 
 
