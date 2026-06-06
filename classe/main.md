@@ -1,7 +1,6 @@
 ---
 layout: arrivederci
-period: scoiattoli
-classe: lampone
+period: summer
 ---
 Da questo folder si aprono le cartelle delle classi. 
 
