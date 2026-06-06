@@ -37,7 +37,7 @@ layout: default
     text-align: center;
   }
   .arrivederci-img {
-    max-width: 400px;
+    max-width: 350px;
     height: auto;
     border-radius: 18px;
     display: block;
@@ -52,6 +52,88 @@ layout: default
   }
   .arrivederci-page details[open] summary {
     border-bottom-color: {{ details_color }}88;
+  }
+  .contact-inner {
+    background: linear-gradient(135deg, {{ titolo_colore }}18, {{ titolo_colore }}08);
+    border-radius: 28px;
+    padding: clamp(3rem,6vw,5rem);
+    border: 1px solid {{ titolo_colore }}44;
+    max-width: 640px;
+    margin: 2rem auto 0;
+  }
+  .contact-inner .section-label {
+    color: {{ titolo_colore }};
+    font-size: .75rem;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+  }
+  .contact-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem,4vw,3rem);
+    color: {{ titolo_colore }};
+    text-align: center;
+    margin-bottom: .5rem;
+  }
+  .contact-inner > p {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  .form-group label {
+    display: block;
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: .4rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: .85rem 1.1rem;
+    border-radius: 12px;
+    border: 1.5px solid {{ titolo_colore }}44;
+    background: white;
+    font-family: Georgia, serif;
+    font-size: .95rem;
+    color: #2d2d2d;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: {{ titolo_colore }};
+  }
+  .form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+  }
+  .btn-form {
+    width: 100%;
+    margin-top: .5rem;
+    padding: .75rem 1.6rem;
+    border-radius: 50px;
+    font-size: .9rem;
+    font-weight: 500;
+    background: {{ titolo_colore }};
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s;
+  }
+  .btn-form:hover {
+    transform: translateY(-2px);
+  }
+  .contact-inner a {
+    color: {{ titolo_colore }};
   }
 </style>
 
