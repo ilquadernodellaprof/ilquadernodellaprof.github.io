@@ -11,12 +11,14 @@ layout: default
   {% assign details_color  = "#3d6bb5" %}
   {% assign vacanze_img    = "/assets/icons/travel.png" %}
   {% assign vacanze_alt    = "Estate!" %}
+  {% assign icon_credit = 'Icona di <a href="https://www.flaticon.com/packs/duck-summer-16150564">dian-ratri</a> tramite <a href="https://www.flaticon.com">Flaticon</a>.' %}
 {% elsif p == "winter" %}
   {% assign vacanze_titolo = "Buone vacanze!" %}
   {% assign titolo_colore  = "#ad1457" %}
   {% assign details_color  = "#ad1457" %}
-  {% assign vacanze_img    = "/assets/icons/icon-512.png" %}
+  {% assign vacanze_img    = "/assets/icons/duckxmas.jpg" %}
   {% assign vacanze_alt    = "Fate i buoni!" %}
+  {% assign icon_credit = 'Icona di <a href="https://www.magnific.com/author/catalyststuff">catalystuff</a> tramite <a href="https://www.magnific.com">Magnific</a>.' %}
 {% else %}
   {% assign vacanze_titolo = "Arrivederci " | append: p | append: "! ❤️" %}
   {% if page.classe == "melanzana"     %}{% assign titolo_colore = "#6b4c8a" %}
@@ -29,6 +31,7 @@ layout: default
   {% assign details_color = titolo_colore %}
   {% assign vacanze_img   = "/assets/icons/ducklings.png" %}
   {% assign vacanze_alt   = "Arrivederci, ragazzi..." %}
+  {% assign icon_credit = 'Icona di <a href="https://www.magnific.com/es/icono/pato_2592092">Freepik</a> tramite <a href="https://www.magnific.com">Magnific</a>.' %}
 {% endif %}
 
 <style>
@@ -135,6 +138,12 @@ layout: default
   .contact-inner a {
     color: {{ titolo_colore }};
   }
+  .arrivederci-credit {
+    font-size: .75rem;
+    color: #6b6560;
+    text-align: center;
+    margin-top: .4rem;
+  }
 </style>
 
 <article class="post arrivederci-page">
@@ -153,6 +162,7 @@ layout: default
   <div class="post-content">
     {{ content }}
     {% include contacts.html %}
+    <p class="arrivederci-credit">{{ icon_credit }}</p>
   </div>
 
 </article>
