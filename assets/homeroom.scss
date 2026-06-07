@@ -9,3 +9,14 @@ body.notte      .post-title, body.notte      .egg-area { color: #2c4a7c; }
 body.lampone    .post-title, body.lampone    .egg-area { color: #ad1457; }
 body.fiordaliso .post-title, body.fiordaliso .egg-area { color: #3d6bb5; }
 body.senape     .post-title, body.senape     .egg-area { color: #c17f24; }
+
+// stile scroll hint
+.egg-scroll-hint {
+  font-size: 0.85rem;
+  color: #6b6560;
+  text-align: center;
+  margin: 16px 0 8px;
+}
+.egg-label {
+  margin-top: 24px;
+} 
