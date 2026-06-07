@@ -20,4 +20,10 @@
   });
 }
   </script>
+  {% if page.layout == 'homeroom' %}
+    <link rel="stylesheet" href="{{ '/assets/homeroom.css' | relative_url }}">
+  {% endif %}
+  {% for css in page.extra_css %}
+    <link rel="stylesheet" href="{{ '/assets/' | append: css | relative_url }}">
+  {% endfor %}
 </head>
