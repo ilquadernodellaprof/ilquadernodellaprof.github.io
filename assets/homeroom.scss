@@ -3,8 +3,9 @@
 @import "buttons";
 @import "egg";
 
-body.melanzana  .post-title { color: #6b4c8a; }
-body.notte      .post-title { color: #2c4a7c; }
-body.lampone    .post-title { color: #ad1457; }
-body.fiordaliso .post-title { color: #3d6bb5; }
-body.senape     .post-title { color: #c17f24; }
+// colori titolo e uovo
+body.melanzana  .post-title, body.melanzana  .egg-area { color: #6b4c8a; }
+body.notte      .post-title, body.notte      .egg-area { color: #2c4a7c; }
+body.lampone    .post-title, body.lampone    .egg-area { color: #ad1457; }
+body.fiordaliso .post-title, body.fiordaliso .egg-area { color: #3d6bb5; }
+body.senape     .post-title, body.senape     .egg-area { color: #c17f24; }
