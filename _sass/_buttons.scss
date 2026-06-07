@@ -1,0 +1,51 @@
+// Griglia bottoni
+.btn-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+// Bottone base
+.h-btn {
+  flex: 0 0 calc(50% - 6px);
+  aspect-ratio: 1;
+  border-radius: 12px;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+}
+
+// Bottone dispari — occupa tutta la riga
+.h-btn:last-child:nth-child(odd) {
+  flex: 0 0 100%;
+  aspect-ratio: auto;
+  padding: 18px 12px;
+}
+
+// Desktop: quattro per riga
+@media (min-width: 600px) {
+  .h-btn {
+    flex: 0 0 calc(25% - 9px);
+  }
+  .h-btn:last-child:nth-child(odd) {
+    flex: 0 0 calc(25% - 9px);
+    aspect-ratio: 1;
+    padding: 12px;
+  }
+}
+
+// Colori per materia
+.btn-his   { color: #d4622a; background: rgba(212,98,42,0.06);   border: 3px solid #d4622a; box-shadow: 0 4px 12px rgba(212,98,42,0.25); }
+.btn-geo   { color: #4a7c3f; background: rgba(74,124,63,0.06);   border: 3px solid #4a7c3f; box-shadow: 0 4px 12px rgba(74,124,63,0.25); }
+.btn-write { color: #2563b0; background: rgba(37,99,176,0.06);   border: 3px solid #2563b0; box-shadow: 0 4px 12px rgba(37,99,176,0.25); }
+.btn-read  { color: #f0478a; background: rgba(240,71,138,0.06);  border: 3px solid #f0478a; box-shadow: 0 4px 12px rgba(240,71,138,0.25); }
+.btn-lin   { color: #e8003d; background: rgba(232,0,61,0.06);    border: 3px solid #e8003d; box-shadow: 0 4px 12px rgba(232,0,61,0.25); }
+.btn-o     { color: #9b72cf; background: rgba(155,114,207,0.06); border: 3px solid #9b72cf; box-shadow: 0 4px 12px rgba(155,114,207,0.25); }
