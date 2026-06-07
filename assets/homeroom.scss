@@ -3,6 +3,10 @@
 @import "buttons";
 @import "egg";
 
+.post-title {
+  text-align: center;
+}
+
 // colori titolo e uovo
 body.melanzana  .post-title, body.melanzana  .egg-area { color: #6b4c8a; }
 body.notte      .post-title, body.notte      .egg-area { color: #2c4a7c; }
