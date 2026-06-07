@@ -10,4 +10,12 @@ msg: |
 btn: room/btn-prova.html
 ---
 
-Puntini puntini puntini.
+<div class="hw-row hw-his">
+  <span class="hw-date">mer 21/5</span>
+  <p>Storia — Leggi le pagine 42–45.</p>
+</div>
+
+<div class="hw-row hw-geo">
+  <span class="hw-date">lun 26/5</span>
+  <p>Geografia — Studia il clima mediterraneo.</p>
+</div>
