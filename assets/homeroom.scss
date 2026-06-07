@@ -1,9 +1,8 @@
 ---
 ---
-@use "buttons";
-@use "egg";
+@import "buttons";
+@import "egg";
 
-// colors .post-title
 body.melanzana  .post-title { color: #6b4c8a; }
 body.notte      .post-title { color: #2c4a7c; }
 body.lampone    .post-title { color: #ad1457; }
