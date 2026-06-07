@@ -2,7 +2,7 @@
 title: Ripasso di grammatica
 ---
 
-Questi sono gli argomenti principali studiati in seconda. Non ti dimenticare di aprire il box verde in basso, per aprire le pagine su due approfondimenti.
+Questi sono gli argomenti principali studiati in seconda. Non ti dimenticare di aprire il box verde in basso, per aprire le pagine sugli approfondimenti.
 
 ## Cosa ripassare
 
@@ -36,6 +36,6 @@ Questi sono gli argomenti principali studiati in seconda. Non ti dimenticare di 
 <summary>Clicca qui per vedere gli altri argomenti</summary>
 <ul>
 	<li><a href="staccabile">Clicca qui per la prova della staccabilità</a>, che si fa par riconoscere le espansioni ai margini</li>
-	<li><a href="ruolosemantico">Clicca qui per approfondire i ruoli semantici</a></li>
+	<li><a href="ruolosemantico">Clicca qui per approfondire i ruoli semantici</a> e <a href="semanticaverbo.html">qui</a> per le aree semantiche del verbo</li>
 </ul>
 </details>
