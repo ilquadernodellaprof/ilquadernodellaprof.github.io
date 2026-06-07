@@ -2,3 +2,10 @@
 ---
 @use "buttons";
 @use "egg";
+
+// colors .post-title
+body.melanzana  .post-title { color: #6b4c8a; }
+body.notte      .post-title { color: #2c4a7c; }
+body.lampone    .post-title { color: #ad1457; }
+body.fiordaliso .post-title { color: #3d6bb5; }
+body.senape     .post-title { color: #c17f24; }
