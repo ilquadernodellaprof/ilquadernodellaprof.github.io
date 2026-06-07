@@ -90,6 +90,26 @@
 .egg-area.open .egg-seam   { opacity: 0; }
 .egg-area.open .egg-hint   { opacity: 0; }
 
+// ── Testo a scomparsa ──
+.egg-inner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: currentColor;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 4;
+}
+
+.egg-area.open .egg-inner-text {
+  opacity: 1;
+}
+
 // ══ ALBUME ══
 .albume-wrap {
   width: 72px;
