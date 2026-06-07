@@ -7,7 +7,6 @@ msg: |
   Clicca sui bottoni per aprire le sezioni. <br>
   Per tornare alla home, clicca sul nome del sito nella striscia colorata in cima alla pagina.
 btn: room/2026-2b.html
-extra_css: [buttons.css]
 ---
 
 <div class="hw-row hw-read">
