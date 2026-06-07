@@ -1,1 +1,236 @@
-// Stili details/uovo — da definire
+// ══ EGG AREA ══
+.egg-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.egg-label {
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: inherit;
+  margin-bottom: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+// ── Guscio ──
+.egg-scene {
+  width: 160px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.egg-wrapper {
+  position: relative;
+  width: 160px;
+  height: 210px;
+}
+
+.egg-top,
+.egg-bottom {
+  position: absolute;
+  left: 0;
+  width: 160px;
+  overflow: hidden;
+  transition: transform 0.65s cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+.egg-top    { top: 0;     height: 106px; }
+.egg-bottom { top: 106px; height: 104px; }
+
+.egg-top::before,
+.egg-bottom::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 160px;
+  height: 210px;
+  background: currentColor;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow:
+    inset -8px -8px 20px rgba(0,0,0,0.1),
+    inset 6px 6px 14px rgba(255,255,255,0.2),
+    0 8px 32px rgba(0,0,0,0.15);
+}
+.egg-top::before    { top: 0; }
+.egg-bottom::before { top: -106px; }
+
+.egg-seam {
+  position: absolute;
+  top: 104px;
+  left: 10%; width: 80%; height: 2px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 2px;
+  transition: opacity 0.2s ease;
+  z-index: 3;
+}
+
+.egg-hint {
+  margin-top: 14px;
+  font-family: 'Righteous', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 0.25s;
+}
+
+// ── Aperto ──
+.egg-area.open .egg-top    { transform: translateY(-90px); }
+.egg-area.open .egg-bottom { transform: translateY(90px); }
+.egg-area.open .egg-seam   { opacity: 0; }
+.egg-area.open .egg-hint   { opacity: 0; }
+
+// ══ ALBUME ══
+.albume-wrap {
+  width: 72px;
+  height: 64px;
+  margin-top: -18px;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.albume-drip {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%) scaleX(1) scaleY(0.3);
+  transform-origin: 50% 0%;
+  width: 72px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 42% 35%, #fffef8 0%, #fdf3e0 55%, #f8e8c8 100%);
+  box-shadow: 0 2px 14px rgba(248,232,180,0.6);
+  opacity: 0;
+}
+
+.albume-splat {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scaleX(0.1) scaleY(0.1);
+  transform-origin: 50% 50%;
+  width: 200px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 45% 40%, #fffef8 0%, #fdf3e0 55%, #f8e8c8 100%);
+  box-shadow: 0 4px 20px rgba(248,232,180,0.5);
+  opacity: 0;
+}
+
+@keyframes drip-fall {
+  0%   { transform: translateX(-50%) scaleX(1)    scaleY(0.3);  opacity: 0; }
+  8%   { opacity: 1; }
+  32%  { transform: translateX(-50%) scaleX(0.52) scaleY(2.6);
+         border-radius: 44% 44% 42% 42% / 12% 12% 88% 88%; }
+  52%  { transform: translateX(-50%) scaleX(0.48) scaleY(3.2);
+         border-radius: 42% 42% 44% 44% / 10% 10% 90% 90%; }
+  65%  { transform: translateX(-50%) scaleX(0.52) scaleY(3.0); opacity: 1; }
+  80%  { transform: translateX(-50%) scaleX(0.52) scaleY(3.0); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes splat-bounce {
+  0%   { transform: translate(-50%, -50%) scaleX(0.1)  scaleY(0.1);  opacity: 0; }
+  5%   { opacity: 1; }
+  30%  { transform: translate(-50%, -50%) scaleX(1.18) scaleY(1.18); }
+  50%  { transform: translate(-50%, -50%) scaleX(0.92) scaleY(0.92); }
+  65%  { transform: translate(-50%, -50%) scaleX(1.04) scaleY(1.04); }
+  78%  { transform: translate(-50%, -50%) scaleX(1)    scaleY(1);    opacity: 1; }
+  90%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.egg-area.animating .albume-drip {
+  animation: drip-fall 0.72s ease-in 0.28s forwards;
+}
+.egg-area.animating .albume-splat {
+  animation: splat-bounce 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.82s forwards;
+}
+
+// ══ CONTENUTO ══
+.egg-content {
+  width: 100%;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.45s ease, max-height 0s;
+}
+
+.egg-scene, .albume-wrap {
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+.egg-area.content-visible .egg-scene,
+.egg-area.content-visible .albume-wrap {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.egg-area.content-visible .egg-content {
+  opacity: 1;
+  max-height: 2000px;
+  transition: opacity 0.45s ease, max-height 0.3s ease;
+  overflow: visible;
+}
+
+.egg-box {
+  background-color: #fdfaf5;
+  background-image: radial-gradient(
+    circle, rgba(160,150,138,0.25) 1.5px, transparent 1.5px
+  );
+  background-size: 20px 20px;
+  border: 2px solid currentColor;
+  border-radius: 18px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+// ══ HW ROWS ══
+.hw-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.hw-date {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1.5px solid currentColor;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hw-row p {
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2d2d2d;
+  margin: 0;
+}
+
+// ── Colori materia ──
+.hw-his   { color: #d4622a; }
+.hw-geo   { color: #4a7c3f; }
+.hw-write { color: #2563b0; }
+.hw-read  { color: #f0478a; }
+.hw-lin   { color: #e8003d; }
+.hw-o     { color: #9b72cf; }
