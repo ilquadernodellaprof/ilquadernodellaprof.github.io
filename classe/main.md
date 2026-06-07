@@ -1,6 +1,6 @@
 ---
 layout: homeroom
-classe: melanzana
+classe: lampone
 title: Cartelle
 msg: |
   Da questo folder si aprono le cartelle delle classi. <br>
