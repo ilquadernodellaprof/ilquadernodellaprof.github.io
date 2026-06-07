@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'it' }}">
+  {%- include head.html -%}
+  <body class="{{ page.classe }}">
+    {%- include header.html -%}
+    <main class="page-content" aria-label="Contenuto">
+      <div class="wrapper">
+        {{ page.msg }}
+        <details>
+          <summary>tocca l'uovo per vedere se ci sono i compiti!</summary>
+          {{ content }}
+        </details>
+        {% include {{ page.btn }} %}
+      </div>
+    </main>
+    {%- include footer.html -%}
+    <script>
+      document.querySelector('details').addEventListener('toggle', function() {
+        this.querySelector('summary').textContent =
+          this.open ? 'toccami per far sparire i compiti!' : 'tocca l\'uovo per vedere se ci sono i compiti!';
+      });
+    </script>
+  </body>
+</html>
