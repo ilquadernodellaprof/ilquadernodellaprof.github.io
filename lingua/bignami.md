@@ -1,8 +1,8 @@
 ---
-title: Ripasso per il recupero
+title: Ripasso di grammatica
 ---
 
-Questi sono gli argomenti finali da ripassare per il recupero. Non ti dimenticare di aprire il box verde in basso, per aprire le pagine su due approfondimenti.
+Questi sono gli argomenti principali studiati in seconda. Non ti dimenticare di aprire il box verde in basso, per aprire le pagine su due approfondimenti.
 
 ## Cosa ripassare
 
