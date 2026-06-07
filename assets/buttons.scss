@@ -1,1 +1,69 @@
-// Bottoni classe — i colori sono da definire
+// Griglia bottoni
+
+.btn-grid {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  padding: 16px 0;
+
+}
+
+// Bottone base
+
+.h-btn {
+
+  flex: 0 0 calc(50% - 6px); // mobile: due per riga
+
+  padding: 18px 12px;
+
+  border-radius: 12px;
+
+  border: none;
+
+  font-family: 'Nunito', sans-serif;
+
+  font-weight: 800;
+
+  font-size: 1rem;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  display: block;
+
+  color: white;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); // placeholder, diventa colore bottone
+
+}
+
+// Bottone dispari — occupa tutta la riga
+
+.h-btn:last-child:nth-child(odd) {
+
+  flex: 0 0 100%;
+
+}
+
+// Desktop: quattro per riga
+
+@media (min-width: 600px) {
+
+  .h-btn {
+
+    flex: 0 0 calc(25% - 9px);
+
+  }
+
+  .h-btn:last-child:nth-child(odd) {
+
+    flex: 0 0 calc(25% - 9px); // su desktop non serve l'eccezione
+
+  }
+
+}
