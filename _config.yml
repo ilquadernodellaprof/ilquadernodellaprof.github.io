@@ -11,3 +11,5 @@ version: "7.5"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+sass:
+  sass_dir: _sass
