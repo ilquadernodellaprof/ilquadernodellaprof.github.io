@@ -104,7 +104,8 @@ layout: default
     overlay.classList.add('active');
     overlay.setAttribute('aria-hidden', 'false');
     enterFullscreen();
-    document.fonts.ready.then(() => buildCarousel(paginate()));
+    // Aspetta che l'overlay sia visibile e il layout calcolato prima di misurare
+    document.fonts.ready.then(() => requestAnimationFrame(() => requestAnimationFrame(() => buildCarousel(paginate()))));
   }
   document.getElementById('btn-studio').addEventListener('click', apriStudio);
 
@@ -311,11 +312,8 @@ layout: default
   btnSpazioso.addEventListener('click', () => {
     const attivo = document.body.classList.toggle('dyslexic');
     localStorage.setItem('dyslexic', attivo ? '1' : '0');
-    // Forza reflow prima di misurare con il nuovo font
-    document.fonts.ready.then(() => {
-      ghost.getBoundingClientRect();
-      buildCarousel(paginate());
-    });
+    // Doppio rAF: il primo applica il nuovo font, il secondo misura
+    requestAnimationFrame(() => requestAnimationFrame(() => buildCarousel(paginate())));
   });
 
   document.addEventListener('keydown', e => {
