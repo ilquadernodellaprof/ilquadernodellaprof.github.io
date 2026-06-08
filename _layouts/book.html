@@ -111,8 +111,6 @@ layout: default
   }
 
   // ── Paginazione ───────────────────────────────────────────────────────────
-  // Usa una .book-page reale nel track per misurare.
-  // Il CSS di book.scss si applica automaticamente — niente ghost, niente repliche.
   function paginate() {
 
     // Prepara il contenuto
@@ -158,7 +156,10 @@ layout: default
     probe.style.visibility = 'hidden';
     track.appendChild(probe);
 
-    var pageH  = stage.clientHeight; // altezza reale dello stage, già calcolata dal browser
+    // FIX: misura l'altezza disponibile dall'interno del probe,
+    // non dallo stage — così il padding di .book-page è già sottratto.
+    var pageH = probe.clientHeight;
+
     var result = [];
     var cur    = '';
 
@@ -296,14 +297,18 @@ layout: default
     overlay.classList.add('active');
     overlay.setAttribute('aria-hidden', 'false');
     enterFullscreen();
-    // Due frame: il primo rende l'overlay visibile, il secondo misura
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        document.fonts.ready.then(function() {
-          buildCarousel();
-        });
+
+    // FIX: aspetta più frame + timeout per Safari iOS
+    // dove la viewport si assesta dopo il fullscreen
+    var rafCount = 0;
+    function waitAndBuild() {
+      rafCount++;
+      if (rafCount < 4) { requestAnimationFrame(waitAndBuild); return; }
+      document.fonts.ready.then(function() {
+        setTimeout(buildCarousel, 80);
       });
-    });
+    }
+    requestAnimationFrame(waitAndBuild);
   }
 
   document.getElementById('btn-studio').addEventListener('click', apriStudio);
@@ -322,6 +327,14 @@ layout: default
 
   prevBtn.addEventListener('click', function() { goTo(current - 1); });
   nextBtn.addEventListener('click', function() { goTo(current + 1); });
+
+  // FIX: ricalcola al resize (barra indirizzi mobile che appare/sparisce)
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    if (!overlay.classList.contains('active')) return;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(buildCarousel, 200);
+  });
 
   // ── Drag / swipe ──────────────────────────────────────────────────────────
   function onDragStart(x) { dragStartX = x; dragging = true; track.classList.add('no-transition'); }
