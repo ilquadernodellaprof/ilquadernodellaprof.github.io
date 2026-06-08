@@ -158,7 +158,7 @@ layout: default
     probe.style.visibility = 'hidden';
     track.appendChild(probe);
 
-    var pageH  = probe.clientHeight; // altezza reale disponibile per il contenuto
+    var pageH  = stage.clientHeight; // altezza reale dello stage, già calcolata dal browser
     var result = [];
     var cur    = '';
 
