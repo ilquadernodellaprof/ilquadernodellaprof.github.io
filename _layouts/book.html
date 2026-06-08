@@ -99,13 +99,21 @@ layout: default
   // ── Apri studio ──
   // rawHTML letto qui, al momento dell'apertura, non al caricamento della pagina
   let rawHTML = '';
+
+  // ResizeObserver riusato ad ogni apertura
+  const stageObserver = new ResizeObserver(() => {
+    if (stage.clientHeight > 0) {
+      stageObserver.disconnect();
+      document.fonts.ready.then(() => buildCarousel(paginate()));
+    }
+  });
+
   function apriStudio() {
     rawHTML = document.querySelector('.post-content').innerHTML;
     overlay.classList.add('active');
     overlay.setAttribute('aria-hidden', 'false');
     enterFullscreen();
-    // Aspetta che l'overlay sia visibile e il layout calcolato prima di misurare
-    document.fonts.ready.then(() => requestAnimationFrame(() => requestAnimationFrame(() => buildCarousel(paginate()))));
+    stageObserver.observe(stage);
   }
   document.getElementById('btn-studio').addEventListener('click', apriStudio);
 
