@@ -66,23 +66,18 @@ layout: default
 <script>
 (function() {
 
-  // ── Costanti ──────────────────────────────────────────────────────────────
   var MAX_DOTS  = 5;
   var THRESHOLD = 60;
 
-  // ── Stato ─────────────────────────────────────────────────────────────────
   var pages        = [];
   var pageHeadings = [];
   var current      = 0;
   var dragStartX   = null;
   var dragging     = false;
 
-  // ── Elementi DOM ──────────────────────────────────────────────────────────
   var overlay       = document.getElementById('book-overlay');
   var track         = document.getElementById('track');
   var stage         = document.getElementById('stage');
-  var bar           = document.getElementById('bar');
-  var bookHeader    = document.getElementById('book-header');
   var counter       = document.getElementById('counter');
   var dotsEl        = document.getElementById('dots');
   var prevBtn       = document.getElementById('prev');
@@ -116,35 +111,13 @@ layout: default
   }
 
   // ── Paginazione ───────────────────────────────────────────────────────────
-  function paginate(stageW, stageH) {
-
-    // Legge font e dimensione da localStorage, esattamente come li ha impostati l'utente
-    var isDyslexic = document.body.classList.contains('dyslexic');
-    var fontSize   = parseFloat(localStorage.getItem('fontSize')) || 18;
-    var fontFamily = isDyslexic ? 'OpenDyslexic, sans-serif' : 'Georgia, serif';
-    var lineHeight = isDyslexic ? fontSize * 1.8 : fontSize * 1.55;
-
-    // Crea ghost con dimensioni esatte dello stage misurate dal chiamante
-    var ghost = document.createElement('div');
-    ghost.style.cssText = [
-      'position:fixed',
-      'top:0',
-      'left:0',
-      'visibility:hidden',
-      'overflow:hidden',
-      'box-sizing:border-box',
-      'width:'      + stageW + 'px',
-      'height:'     + stageH + 'px',
-      'padding:40px 32px',
-      'font-family:' + fontFamily,
-      'font-size:'   + fontSize + 'px',
-      'line-height:' + lineHeight + 'px'
-    ].join(';');
-    document.body.appendChild(ghost);
+  // Usa una .book-page reale nel track per misurare.
+  // Il CSS di book.scss si applica automaticamente — niente ghost, niente repliche.
+  function paginate() {
 
     // Prepara il contenuto
-    var parser = new DOMParser();
     var raw    = document.querySelector('.post-content').innerHTML;
+    var parser = new DOMParser();
     var doc    = parser.parseFromString('<div>' + raw + '</div>', 'text/html');
     doc.querySelectorAll('.page-controls, script, .btn-torna').forEach(function(el) { el.remove(); });
 
@@ -174,26 +147,37 @@ layout: default
       });
     });
 
-    var nodes  = Array.from(doc.body.firstChild.childNodes);
+    var nodes = Array.from(doc.body.firstChild.childNodes).filter(function(n) {
+      return n.outerHTML || n.textContent.trim();
+    });
+
+    // Crea una pagina misuratore reale nel track
+    var probe = document.createElement('div');
+    probe.className = 'book-page';
+    probe.style.position = 'absolute';
+    probe.style.visibility = 'hidden';
+    track.appendChild(probe);
+
+    var pageH  = probe.clientHeight; // altezza reale disponibile per il contenuto
     var result = [];
     var cur    = '';
 
     nodes.forEach(function(node) {
-      if (!node.outerHTML && !node.textContent.trim()) return;
+      var html = node.outerHTML || node.textContent;
 
       if (node.nodeName !== 'P') {
-        ghost.innerHTML = cur + (node.outerHTML || node.textContent);
-        if (ghost.scrollHeight <= stageH) {
-          cur += node.outerHTML || node.textContent;
+        probe.innerHTML = cur + html;
+        if (probe.scrollHeight <= pageH) {
+          cur += html;
         } else {
           if (cur) result.push(cur);
-          cur = node.outerHTML || node.textContent;
+          cur = html;
         }
         return;
       }
 
-      ghost.innerHTML = cur + node.outerHTML;
-      if (ghost.scrollHeight <= stageH) {
+      probe.innerHTML = cur + node.outerHTML;
+      if (probe.scrollHeight <= pageH) {
         cur += node.outerHTML;
         return;
       }
@@ -206,8 +190,8 @@ layout: default
         var buffer   = '';
         for (var i = wi; i < words.length; i++) {
           var test = buffer + (buffer ? ' ' : '') + words[i];
-          ghost.innerHTML = cur + '<p>' + test + '</p>';
-          if (ghost.scrollHeight <= stageH) { buffer = test; fitIndex = i; }
+          probe.innerHTML = cur + '<p>' + test + '</p>';
+          if (probe.scrollHeight <= pageH) { buffer = test; fitIndex = i; }
           else break;
         }
 
@@ -233,16 +217,18 @@ layout: default
     });
 
     if (cur) result.push(cur);
-    document.body.removeChild(ghost);
+
+    // Rimuove la pagina misuratore
+    track.removeChild(probe);
     return result;
   }
 
   // ── Carosello ─────────────────────────────────────────────────────────────
-  function buildCarousel(pageContents) {
-    pages   = pageContents;
-    current = 0;
+  function buildCarousel() {
     track.innerHTML  = '';
     dotsEl.innerHTML = '';
+    pages   = paginate();
+    current = 0;
 
     var lastHeading = '';
     pageHeadings = pages.map(function(html) {
@@ -299,7 +285,7 @@ layout: default
     if (!animated) track.classList.add('no-transition');
     updateTrack(0);
     if (!animated) {
-      track.getBoundingClientRect(); // forza reflow
+      track.getBoundingClientRect();
       track.classList.remove('no-transition');
     }
     updateUI();
@@ -310,15 +296,11 @@ layout: default
     overlay.classList.add('active');
     overlay.setAttribute('aria-hidden', 'false');
     enterFullscreen();
-
-    // Misura le dimensioni dello stage DOPO che è visibile
-    // usando requestAnimationFrame per essere certi che il browser abbia fatto il layout
+    // Due frame: il primo rende l'overlay visibile, il secondo misura
     requestAnimationFrame(function() {
       requestAnimationFrame(function() {
-        var stageW = stage.clientWidth;
-        var stageH = stage.clientHeight;
         document.fonts.ready.then(function() {
-          buildCarousel(paginate(stageW, stageH));
+          buildCarousel();
         });
       });
     });
@@ -360,8 +342,8 @@ layout: default
     else                     goTo(current);
   }
 
-  stage.addEventListener('touchstart', function(e) { onDragStart(e.touches[0].clientX); },        { passive: true });
-  stage.addEventListener('touchmove',  function(e) { onDragMove(e.touches[0].clientX); },         { passive: true });
+  stage.addEventListener('touchstart', function(e) { onDragStart(e.touches[0].clientX); },       { passive: true });
+  stage.addEventListener('touchmove',  function(e) { onDragMove(e.touches[0].clientX); },        { passive: true });
   stage.addEventListener('touchend',   function(e) { onDragEnd(e.changedTouches[0].clientX); });
   stage.addEventListener('mousedown',  function(e) { onDragStart(e.clientX); });
   window.addEventListener('mousemove', function(e) { if (dragging) onDragMove(e.clientX); });
