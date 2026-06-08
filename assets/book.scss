@@ -1,0 +1,249 @@
+---
+---
+
+// ─── book.scss ────────────────────────────────────────────────────────────
+// Caricato solo dalle pagine con layout: book (via extra_css: book.css)
+
+// ─── Variabili ────────────────────────────────────────────────────────────
+$green:          #9ec4a0;
+$green-dark:     #6a9e6e;
+$green-hover:    rgba(158, 196, 160, 0.12);
+$soft:           #6b6560;
+$bg:             #fdfaf5;
+$text:           #2d2d2d;
+$header-color:   #b0a89e;
+$fragola-border: #f0b8c0;
+$fragola-text:   #e08090;
+$fragola-bg:     #fdeef0;
+$hr-details:     #c5ddc6;
+$hr-info:        #e8dfa0;
+$hr-nota:        #e08090;
+$slide-duration: 300ms;
+
+// ─── Bottone apri studio (fragola, in .page-controls) ─────────────────────
+.btn-studio {
+  padding: 10px 22px;
+  cursor: pointer;
+  background: none;
+  color: $fragola-text;
+  border: 1.5px solid $fragola-border;
+  border-radius: 22px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: background 0.15s, transform 0.1s ease;
+  &:hover {
+    background: $fragola-bg;
+    transform: scale(1.03);
+  }
+}
+
+// ─── Overlay ──────────────────────────────────────────────────────────────
+#book-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: $bg;
+  flex-direction: column;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 28px;
+  color: $text;
+
+  &.active { display: flex; }
+}
+
+// ─── Header sottile ───────────────────────────────────────────────────────
+#book-header {
+  padding: 0.5rem clamp(1.2rem, 6vw, 4rem);
+  font-family: Georgia, serif;
+  font-size: 0.72rem;
+  color: $header-color;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+// ─── Stage ────────────────────────────────────────────────────────────────
+#stage {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  user-select: none;
+  &:active { cursor: grabbing; }
+}
+
+#track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+  transition: transform $slide-duration cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  &.dragging { transition: none; }
+}
+
+.book-page {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 2.5rem clamp(1.2rem, 6vw, 4rem);
+
+  p { margin-bottom: 28px; }
+
+  hr {
+    border: none;
+    height: 2px;
+    margin: 18px 0;
+    border-radius: 2px;
+    background: $hr-details;
+  }
+  hr.box-info-hr { background: $hr-info; }
+  hr.box-nota-hr { background: $hr-nota; }
+  hr.details-hr  { background: $hr-details; }
+}
+
+// ─── Ghost ────────────────────────────────────────────────────────────────
+#ghost {
+  position: fixed;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+// ─── Barra inferiore ──────────────────────────────────────────────────────
+#bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem clamp(0.8rem, 4vw, 2rem);
+  border-top: 1px solid rgba(158, 196, 160, 0.3);
+  background: $bg;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+// ─── Frecce navigazione ───────────────────────────────────────────────────
+.book-nav {
+  background: none;
+  border: 1.5px solid $green;
+  color: $green-dark;
+  border-radius: 50px;
+  width: 52px;
+  height: 52px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.15s, background 0.15s;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &:hover              { opacity: 1; background: $green-hover; }
+  &:disabled           { opacity: 0.18; cursor: default; }
+  &:disabled:hover     { background: none; }
+}
+
+// ─── Centro barra ─────────────────────────────────────────────────────────
+#bar-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+
+#counter {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: $soft;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+#dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $green;
+  opacity: 0.25;
+  transition: opacity 0.2s, transform 0.2s;
+
+  &.active { opacity: 1; transform: scale(1.35); }
+}
+
+// ─── Bottone Abc ──────────────────────────────────────────────────────────
+#btn-spazioso {
+  background: none;
+  border: 1.5px solid $green;
+  color: $green-dark;
+  border-radius: 50px;
+  padding: 0 18px;
+  height: 52px;
+  font-family: 'OpenDyslexic', sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
+  &:hover          { background: $green-hover; }
+  &:disabled       { opacity: 0.25; cursor: default; border-color: #ccc; color: #aaa; }
+  &:disabled:hover { background: none; }
+
+  body.dyslexic & { background: $green; color: white; }
+}
+
+// ─── Bottone Chiudi ───────────────────────────────────────────────────────
+#btn-chiudi {
+  background: none;
+  border: 1.5px solid $fragola-border;
+  color: $fragola-text;
+  border-radius: 50px;
+  padding: 0 14px;
+  height: 52px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+
+  &:hover { background: $fragola-bg; }
+}
+
+.chiudi-x     { font-size: 1.1rem; line-height: 1; }
+.chiudi-label { font-size: 0.65rem; letter-spacing: 0.04em; opacity: 0.7; line-height: 1; }
+
+// ─── OpenDyslexic in modalità studio ──────────────────────────────────────
+body.dyslexic .book-page {
+  font-family: 'OpenDyslexic', sans-serif;
+  font-size: 0.95em;
+  line-height: 1.8;
+}
+
+// ─── Stampa ───────────────────────────────────────────────────────────────
+@media print {
+  #book-overlay { display: none !important; }
+}
