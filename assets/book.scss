@@ -47,9 +47,11 @@ $slide-duration: 300ms;
   background: $bg;
   flex-direction: column;
   font-family: Georgia, serif;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 22px;
+  line-height: 32px;
   color: $text;
+  height: 100%;
+  width: 100%;
 
   &.active { display: flex; }
 }
@@ -91,8 +93,11 @@ $slide-duration: 300ms;
   height: 100%;
   overflow: hidden;
   padding: 2.5rem clamp(1.2rem, 6vw, 4rem);
+  font-size: 22px;
+  line-height: 32px;
+  box-sizing: border-box;
 
-  p { margin-bottom: 28px; }
+  p { margin-bottom: 32px; }
 
   hr {
     border: none;
@@ -239,7 +244,7 @@ $slide-duration: 300ms;
 // ─── OpenDyslexic in modalità studio ──────────────────────────────────────
 body.dyslexic .book-page {
   font-family: 'OpenDyslexic', sans-serif;
-  font-size: 0.95em;
+  font-size: 20.9px; // 22 * 0.95
   line-height: 1.8;
 }
 
