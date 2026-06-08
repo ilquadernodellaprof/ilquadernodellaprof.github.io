@@ -1,0 +1,339 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+  <div class="post-content">
+    <div class="page-controls">
+      <button class="btn-stampa" onclick="window.print()">🖨 Stampa</button>
+      <button class="font-btn" onclick="cambiaFont(-1)" aria-label="Rimpicciolisci testo">A−</button>
+      <button class="font-btn" onclick="cambiaFont(1)" aria-label="Ingrandisci testo">A+</button>
+      <button class="btn-dyslexic" onclick="toggleDyslexic()">Spazioso</button>
+      <button class="btn-studio" id="btn-studio">Apri modalità studio 📖</button>
+    </div>
+<script>
+  if (localStorage.getItem('dyslexic') === '1') {
+    document.body.classList.add('dyslexic');
+    document.querySelector('.btn-dyslexic').textContent = 'Ristretto';
+  }
+  let dimensione = parseFloat(localStorage.getItem('fontSize')) || 18;
+  document.body.style.fontSize = dimensione + 'px';
+  function cambiaFont(delta) {
+    dimensione = Math.min(Math.max(dimensione + delta * 2, 14), 28);
+    document.body.style.fontSize = dimensione + 'px';
+    localStorage.setItem('fontSize', dimensione);
+  }
+  function toggleDyslexic() {
+    const attivo = document.body.classList.toggle('dyslexic');
+    localStorage.setItem('dyslexic', attivo ? '1' : '0');
+    document.querySelector('.btn-dyslexic').textContent = attivo ? 'Ristretto' : 'Spazioso';
+  }
+</script>
+
+    {{ content }}
+    <a href="javascript:history.back()" class="btn-torna">← Torna indietro</a>
+  </div>
+</article>
+
+<!-- ── Overlay modalità studio ── -->
+<div id="book-overlay" aria-hidden="true">
+
+  <div id="book-header">
+    <span id="header-title">{{ page.title | escape }}</span> · <span id="header-page"></span>
+  </div>
+
+  <div id="stage">
+    <div id="track"></div>
+  </div>
+
+  <div id="bar">
+    <button id="btn-spazioso">Abc</button>
+    <button class="book-nav" id="prev">&#8592;</button>
+    <div id="bar-center">
+      <span id="counter"></span>
+      <div id="dots"></div>
+    </div>
+    <button class="book-nav" id="next">&#8594;</button>
+    <button id="btn-chiudi">
+      <span class="chiudi-x">✕</span>
+      <span class="chiudi-label">chiudi</span>
+    </button>
+  </div>
+
+</div>
+
+<!-- Ghost per misurazione -->
+<div id="ghost"></div>
+
+<script>
+  // ── DOM ──
+  const overlay    = document.getElementById('book-overlay');
+  const track      = document.getElementById('track');
+  const counter    = document.getElementById('counter');
+  const dotsEl     = document.getElementById('dots');
+  const prevBtn    = document.getElementById('prev');
+  const nextBtn    = document.getElementById('next');
+  const stage      = document.getElementById('stage');
+  const btnChiudi  = document.getElementById('btn-chiudi');
+  const btnSpazioso = document.getElementById('btn-spazioso');
+  const ghost      = document.getElementById('ghost');
+  const headerPage = document.getElementById('header-page');
+
+  const MAX_DOTS = 5;
+  let current = 0;
+  let pages   = [];
+
+  // ── Fullscreen ──
+  function enterFullscreen() {
+    const el = document.documentElement;
+    if (el.requestFullscreen)            el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+  }
+  function exitFullscreen() {
+    if (document.exitFullscreen)            document.exitFullscreen();
+    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+  }
+
+  // ── Apri studio ──
+  // rawHTML letto qui, al momento dell'apertura, non al caricamento della pagina
+  let rawHTML = '';
+  function apriStudio() {
+    rawHTML = document.querySelector('.post-content').innerHTML;
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    enterFullscreen();
+    document.fonts.ready.then(() => buildCarousel(paginate()));
+  }
+  document.getElementById('btn-studio').addEventListener('click', apriStudio);
+
+  // ── Chiudi studio ──
+  btnChiudi.addEventListener('click', () => {
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+    exitFullscreen();
+  });
+
+  // ── Spezzatura naturale ──
+  function findBreakPoint(words, overflowIndex) {
+    const STRONG = /[.!?]$/;
+    const WEAK   = /[;:,]$/;
+    const limit  = Math.max(0, overflowIndex - 15);
+    for (let i = overflowIndex - 1; i >= limit; i--) {
+      if (STRONG.test(words[i])) return i;
+    }
+    for (let i = overflowIndex - 1; i >= limit; i--) {
+      if (WEAK.test(words[i])) return i;
+    }
+    return -1;
+  }
+
+  // ── Paginazione ──
+  function paginate() {
+    const stageH = stage.clientHeight;
+    const stageW = stage.clientWidth;
+    const isDyslexic = document.body.classList.contains('dyslexic');
+
+    ghost.style.width      = stageW + 'px';
+    ghost.style.height     = stageH + 'px';
+    ghost.style.padding    = '2.5rem clamp(1.2rem, 6vw, 4rem)';
+    ghost.style.fontFamily = isDyslexic ? 'OpenDyslexic, sans-serif' : 'Georgia, serif';
+    ghost.style.fontSize   = isDyslexic ? '0.95em' : '18px';
+    ghost.style.lineHeight = isDyslexic ? '1.8' : '28px';
+    ghost.style.boxSizing  = 'border-box';
+    ghost.innerHTML = '';
+
+    // Pulisce il rawHTML dai controlli di pagina e dal btn-torna
+    const parser = new DOMParser();
+    const doc    = parser.parseFromString(`<div>${rawHTML}</div>`, 'text/html');
+    doc.querySelectorAll('.page-controls, script, .btn-torna').forEach(el => el.remove());
+
+    // Converte box in testo + hr colorati
+    // .box-info → hr giallo, .box-nota → hr fragola, details → hr verde
+    const BOX_MAP = [
+      { selector: '.box-nota',  hrClass: 'box-nota-hr'  },
+      { selector: '.box-info',  hrClass: 'box-info-hr'  },
+      { selector: 'details',    hrClass: 'details-hr'   },
+    ];
+    BOX_MAP.forEach(({ selector, hrClass }) => {
+      doc.querySelectorAll(selector).forEach(box => {
+        const frag = doc.createDocumentFragment();
+        const hrBefore = doc.createElement('hr');
+        hrBefore.className = hrClass;
+        const hrAfter = doc.createElement('hr');
+        hrAfter.className = hrClass;
+        // Estrae il testo: per details salta il summary, per gli altri prende tutto
+        const inner = doc.createElement('div');
+        if (selector === 'details') {
+          Array.from(box.childNodes)
+            .filter(n => n.nodeName !== 'SUMMARY')
+            .forEach(n => inner.appendChild(n.cloneNode(true)));
+        } else {
+          inner.innerHTML = box.innerHTML;
+        }
+        frag.appendChild(hrBefore);
+        Array.from(inner.childNodes).forEach(n => frag.appendChild(n.cloneNode(true)));
+        frag.appendChild(hrAfter);
+        box.parentNode.replaceChild(frag, box);
+      });
+    });
+
+    const nodes = Array.from(doc.body.firstChild.childNodes);
+
+    const result = [];
+    let currentPageHTML = '';
+
+    for (const node of nodes) {
+      if (!node.outerHTML && !node.textContent.trim()) continue;
+
+      if (node.nodeName !== 'P') {
+        ghost.innerHTML = currentPageHTML + (node.outerHTML || node.textContent);
+        if (ghost.scrollHeight <= stageH) {
+          currentPageHTML += node.outerHTML || node.textContent;
+        } else {
+          if (currentPageHTML) result.push(currentPageHTML);
+          currentPageHTML = node.outerHTML || node.textContent;
+        }
+        continue;
+      }
+
+      ghost.innerHTML = currentPageHTML + node.outerHTML;
+      if (ghost.scrollHeight <= stageH) {
+        currentPageHTML += node.outerHTML;
+        continue;
+      }
+
+      const words = node.textContent.split(' ');
+      let wi = 0;
+
+      while (wi < words.length) {
+        let fitIndex = -1;
+        let buffer = '';
+        for (let i = wi; i < words.length; i++) {
+          const test = buffer + (buffer ? ' ' : '') + words[i];
+          ghost.innerHTML = currentPageHTML + `<p>${test}</p>`;
+          if (ghost.scrollHeight <= stageH) { buffer = test; fitIndex = i; }
+          else break;
+        }
+
+        if (fitIndex === -1) {
+          if (currentPageHTML) result.push(currentPageHTML);
+          currentPageHTML = `<p>${words[wi]}</p>`;
+          wi++;
+          continue;
+        }
+
+        if (fitIndex === words.length - 1) {
+          currentPageHTML += `<p>${buffer}</p>`;
+          wi = words.length;
+          continue;
+        }
+
+        const breakAt = findBreakPoint(words, fitIndex + 1);
+        const splitAt = breakAt >= 0 ? breakAt : fitIndex;
+        currentPageHTML += `<p>${words.slice(wi, splitAt + 1).join(' ')}</p>`;
+        result.push(currentPageHTML);
+        currentPageHTML = '';
+        wi = splitAt + 1;
+      }
+    }
+
+    if (currentPageHTML) result.push(currentPageHTML);
+    ghost.innerHTML = '';
+    return result;
+  }
+
+  // ── Carosello ──
+  function buildCarousel(pageContents) {
+    pages = pageContents;
+    current = 0;
+    track.innerHTML = '';
+    dotsEl.innerHTML = '';
+
+    pages.forEach(html => {
+      const div = document.createElement('div');
+      div.className = 'book-page';
+      div.innerHTML = html;
+      track.appendChild(div);
+    });
+
+    for (let i = 0; i < Math.min(pages.length, MAX_DOTS); i++) {
+      const d = document.createElement('div');
+      d.className = 'dot';
+      dotsEl.appendChild(d);
+    }
+    goTo(0, false);
+  }
+
+  // ── Navigazione ──
+  function updateTrack(offset) {
+    track.style.transform = `translateX(calc(-${current * 100}% + ${offset}px))`;
+  }
+
+  function updateUI() {
+    const total = pages.length;
+    counter.textContent = `${current + 1} / ${total}`;
+    headerPage.textContent = `Pagina ${current + 1}`;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+    btnSpazioso.disabled = current > 0;
+
+    const dots  = dotsEl.children;
+    const start = Math.min(Math.max(current - 2, 0), total - Math.min(total, MAX_DOTS));
+    Array.from(dots).forEach((d, i) => d.classList.toggle('active', start + i === current));
+  }
+
+  function goTo(n, animated = true) {
+    if (n < 0 || n >= pages.length) return;
+    current = n;
+    if (!animated) track.classList.add('dragging');
+    updateTrack(0);
+    if (!animated) { track.getBoundingClientRect(); track.classList.remove('dragging'); }
+    updateUI();
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  btnSpazioso.addEventListener('click', () => {
+    const attivo = document.body.classList.toggle('dyslexic');
+    localStorage.setItem('dyslexic', attivo ? '1' : '0');
+    buildCarousel(paginate());
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!overlay.classList.contains('active')) return;
+    if (e.key === 'ArrowRight') goTo(current + 1);
+    if (e.key === 'ArrowLeft')  goTo(current - 1);
+  });
+
+  // ── Drag / swipe ──
+  let dragStartX = null, dragging = false;
+  const THRESHOLD = 60;
+
+  function onDragStart(x) { dragStartX = x; dragging = true; track.classList.add('dragging'); }
+  function onDragMove(x) {
+    if (!dragging) return;
+    const dx = x - dragStartX;
+    const total = pages.length;
+    if ((current === 0 && dx > 0) || (current === total - 1 && dx < 0)) updateTrack(dx * 0.2);
+    else updateTrack(dx);
+  }
+  function onDragEnd(x) {
+    if (!dragging) return;
+    dragging = false;
+    track.classList.remove('dragging');
+    const dx = x - dragStartX;
+    if (dx < -THRESHOLD)     goTo(current + 1);
+    else if (dx > THRESHOLD) goTo(current - 1);
+    else                     goTo(current);
+  }
+
+  stage.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
+  stage.addEventListener('touchmove',  e => onDragMove(e.touches[0].clientX),  { passive: true });
+  stage.addEventListener('touchend',   e => onDragEnd(e.changedTouches[0].clientX));
+  stage.addEventListener('mousedown',  e => onDragStart(e.clientX));
+  window.addEventListener('mousemove', e => { if (dragging) onDragMove(e.clientX); });
+  window.addEventListener('mouseup',   e => { if (dragging) onDragEnd(e.clientX); });
+</script>
