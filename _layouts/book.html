@@ -139,8 +139,8 @@ layout: default
     ghost.style.height     = stageH + 'px';
     ghost.style.padding    = '2.5rem clamp(1.2rem, 6vw, 4rem)';
     ghost.style.fontFamily = isDyslexic ? 'OpenDyslexic, sans-serif' : 'Georgia, serif';
-    ghost.style.fontSize   = isDyslexic ? '0.95em' : '18px';
-    ghost.style.lineHeight = isDyslexic ? '1.8' : '28px';
+    ghost.style.fontSize   = isDyslexic ? '20.9px' : '22px'; // 22 * 0.95 = 20.9
+    ghost.style.lineHeight = isDyslexic ? '1.8' : '32px';
     ghost.style.boxSizing  = 'border-box';
     ghost.innerHTML = '';
 
@@ -245,11 +245,23 @@ layout: default
   }
 
   // ── Carosello ──
+  // Mappa pagina → heading corrente (ultimo h2/h3 visto fino a quella pagina)
+  let pageHeadings = [];
+
   function buildCarousel(pageContents) {
     pages = pageContents;
     current = 0;
     track.innerHTML = '';
     dotsEl.innerHTML = '';
+
+    let lastHeading = '';
+    pageHeadings = pages.map(html => {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      const h = tmp.querySelector('h2, h3');
+      if (h) lastHeading = h.textContent;
+      return lastHeading;
+    });
 
     pages.forEach(html => {
       const div = document.createElement('div');
@@ -274,7 +286,7 @@ layout: default
   function updateUI() {
     const total = pages.length;
     counter.textContent = `${current + 1} / ${total}`;
-    headerPage.textContent = `Pagina ${current + 1}`;
+    headerPage.textContent = pageHeadings[current] || `Pagina ${current + 1}`;
     prevBtn.disabled = current === 0;
     nextBtn.disabled = current === total - 1;
     btnSpazioso.disabled = current > 0;
@@ -299,7 +311,11 @@ layout: default
   btnSpazioso.addEventListener('click', () => {
     const attivo = document.body.classList.toggle('dyslexic');
     localStorage.setItem('dyslexic', attivo ? '1' : '0');
-    buildCarousel(paginate());
+    // Forza reflow prima di misurare con il nuovo font
+    document.fonts.ready.then(() => {
+      ghost.getBoundingClientRect();
+      buildCarousel(paginate());
+    });
   });
 
   document.addEventListener('keydown', e => {
