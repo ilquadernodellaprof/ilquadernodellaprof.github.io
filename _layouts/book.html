@@ -96,141 +96,184 @@ layout: default
     else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
   }
 
-  // ── Spezzatura naturale ───────────────────────────────────────────────────
-  function findBreakPoint(words, overflowIndex) {
-    var STRONG = /[.!?]$/;
-    var WEAK   = /[;,]$/;
-    var NO_EOL = ['il','lo','la','i','gli','le','l\'','un','un\'','una',
-                  'dei','delle','degli','dello','di','a','da','in','con',
-                  'su','per','tra','fra','ai','al','allo','alla','alle',
-                  'agli','dallo','dalla','dagli','dalle','dai','nel','nello',
-                  'nella','negli','nelle','nei','sul','sulla','e','che','si'];
-    var limit  = Math.max(0, overflowIndex - 15);
-    for (var i = overflowIndex - 1; i >= limit; i--) {
-      if (STRONG.test(words[i])) return i;
-    }
-    for (var i = overflowIndex - 1; i >= limit; i--) {
-      if (WEAK.test(words[i])) return i;
-    }
-    var splitAt = overflowIndex - 1;
-    if (NO_EOL.indexOf(words[splitAt].toLowerCase().replace(/[.,;:!?]$/, '')) !== -1) {
-      splitAt = Math.max(0, splitAt - 1);
-    }
-    return splitAt;
+  // ── Parole che non possono stare a fine pagina ────────────────────────────
+  var NO_EOL = ['il','lo','la','i','gli','le',"l'",'un',"un'",'una',
+                'dei','delle','degli','dello','di','a','da','in','con',
+                'su','per','tra','fra','ai','al','allo','alla','alle',
+                'agli','dallo','dalla','dagli','dalle','dai','nel','nello',
+                'nella','negli','nelle','nei','sul','sulla','e','che','si'];
+
+  function isNoEol(word) {
+    return NO_EOL.indexOf(word.toLowerCase().replace(/[.,;!?]$/, '')) !== -1;
   }
 
   // ── Paginazione ───────────────────────────────────────────────────────────
+  // Lavora su nodi DOM clonati — preserva markup interno (corsivi, link, ecc.)
+  // Spezza i paragrafi troppo lunghi frase per frase usando Range.
   function paginate() {
 
-    // Prepara il contenuto
-    var raw    = document.querySelector('.post-content').innerHTML;
-    var parser = new DOMParser();
-    var doc    = parser.parseFromString('<div>' + raw + '</div>', 'text/html');
-    doc.querySelectorAll('.page-controls, script, .btn-torna').forEach(function(el) { el.remove(); });
+    // Clona il contenuto e rimuove i controlli
+    var source = document.querySelector('.post-content').cloneNode(true);
+    source.querySelectorAll('.page-controls, script, .btn-torna').forEach(function(el) {
+      el.remove();
+    });
 
-    // Converte box in hr colorati + contenuto piatto
+    // Converte box e details in separatori orizzontali + contenuto piatto
     var BOX_MAP = [
       { selector: '.box-nota', hrClass: 'box-nota-hr' },
       { selector: '.box-info', hrClass: 'box-info-hr' },
       { selector: 'details',   hrClass: 'details-hr'  }
     ];
     BOX_MAP.forEach(function(entry) {
-      doc.querySelectorAll(entry.selector).forEach(function(box) {
-        var frag     = doc.createDocumentFragment();
-        var hrBefore = doc.createElement('hr'); hrBefore.className = entry.hrClass;
-        var hrAfter  = doc.createElement('hr'); hrAfter.className  = entry.hrClass;
-        var inner    = doc.createElement('div');
+      source.querySelectorAll(entry.selector).forEach(function(box) {
+        var frag     = document.createDocumentFragment();
+        var hrBefore = document.createElement('hr'); hrBefore.className = entry.hrClass;
+        var hrAfter  = document.createElement('hr'); hrAfter.className  = entry.hrClass;
+        frag.appendChild(hrBefore);
         if (entry.selector === 'details') {
           Array.from(box.childNodes)
             .filter(function(n) { return n.nodeName !== 'SUMMARY'; })
-            .forEach(function(n) { inner.appendChild(n.cloneNode(true)); });
+            .forEach(function(n) { frag.appendChild(n.cloneNode(true)); });
         } else {
-          inner.innerHTML = box.innerHTML;
+          Array.from(box.childNodes).forEach(function(n) {
+            frag.appendChild(n.cloneNode(true));
+          });
         }
-        frag.appendChild(hrBefore);
-        Array.from(inner.childNodes).forEach(function(n) { frag.appendChild(n.cloneNode(true)); });
         frag.appendChild(hrAfter);
         box.parentNode.replaceChild(frag, box);
       });
     });
 
-    var nodes = Array.from(doc.body.firstChild.childNodes).filter(function(n) {
-  return n.nodeType === 1;
-});
+    // Raccoglie solo nodi elemento (scarta nodi di testo spuri tra i tag)
+    var nodes = Array.from(source.childNodes).filter(function(n) {
+      return n.nodeType === 1;
+    });
 
-    // Crea una pagina misuratore reale nel track
+    // Crea la pagina misuratore nel track
     var probe = document.createElement('div');
     probe.className = 'book-page';
     probe.style.position = 'absolute';
     probe.style.visibility = 'hidden';
     track.appendChild(probe);
 
-    // FIX: misura l'altezza disponibile dall'interno del probe,
-    // non dallo stage — così il padding di .book-page è già sottratto.
+    // L'altezza disponibile è quella interna al probe (padding già sottratto)
     var pageH = probe.clientHeight;
 
-    var result = [];
-    var cur    = '';
+    var pages  = [];
+    var curDiv = document.createElement('div'); // raccoglie i nodi della pagina corrente
+
+    function fits(testDiv) {
+      probe.innerHTML = '';
+      probe.appendChild(testDiv.cloneNode(true));
+      return probe.scrollHeight <= pageH;
+    }
+
+    function flushPage() {
+      if (curDiv.childNodes.length > 0) {
+        pages.push(curDiv.innerHTML);
+        curDiv = document.createElement('div');
+      }
+    }
 
     nodes.forEach(function(node) {
-      var html = node.outerHTML || node.textContent;
 
+      // Prova ad aggiungere il nodo intero
+      var testDiv = curDiv.cloneNode(true);
+      testDiv.appendChild(node.cloneNode(true));
+
+      if (fits(testDiv)) {
+        curDiv.appendChild(node.cloneNode(true));
+        return;
+      }
+
+      // Non ci sta intero: se non è un paragrafo, vai a pagina nuova
       if (node.nodeName !== 'P') {
-        probe.innerHTML = cur + html;
-        if (probe.scrollHeight <= pageH) {
-          cur += html;
-        } else {
-          if (cur) result.push(cur);
-          cur = html;
-        }
+        flushPage();
+        curDiv.appendChild(node.cloneNode(true));
         return;
       }
 
-      probe.innerHTML = cur + node.outerHTML;
-      if (probe.scrollHeight <= pageH) {
-        cur += node.outerHTML;
-        return;
-      }
+      // È un paragrafo: spezza parola per parola preservando il markup
+      // Usa i Text node leaves del paragrafo per non perdere corsivi ecc.
+      // Strategia: costruisce il paragrafo aggiungendo parole al testo
+      // dei nodi foglia, misurando ogni volta.
 
-      var words = node.textContent.split(' ');
-      var wi    = 0;
+      var words       = node.textContent.split(' ').filter(function(w) { return w !== ''; });
+      var wi          = 0;
 
       while (wi < words.length) {
+
         var fitIndex = -1;
-        var buffer   = '';
+
+        // Cerca quante parole entrano nella pagina corrente
         for (var i = wi; i < words.length; i++) {
-          var test = buffer + (buffer ? ' ' : '') + words[i];
-          probe.innerHTML = cur + '<p>' + test + '</p>';
-          if (probe.scrollHeight <= pageH) { buffer = test; fitIndex = i; }
+          var testP   = document.createElement('p');
+          testP.textContent = words.slice(wi, i + 1).join(' ');
+          // Copia gli attributi del nodo originale
+          Array.from(node.attributes).forEach(function(a) {
+            testP.setAttribute(a.name, a.value);
+          });
+          var t2 = curDiv.cloneNode(true);
+          t2.appendChild(testP);
+          probe.innerHTML = '';
+          probe.appendChild(t2);
+          if (probe.scrollHeight <= pageH) { fitIndex = i; }
           else break;
         }
 
+        // Nessuna parola entra: pagina nuova e riprova
         if (fitIndex === -1) {
-          if (cur) result.push(cur);
-          cur = '<p>' + words[wi] + '</p>';
-          wi++;
+          flushPage();
           continue;
         }
+
+        // Tutte le parole rimanenti entrano
         if (fitIndex === words.length - 1) {
-          cur += '<p>' + buffer + '</p>';
+          var finalP = document.createElement('p');
+          finalP.textContent = words.slice(wi).join(' ');
+          Array.from(node.attributes).forEach(function(a) {
+            finalP.setAttribute(a.name, a.value);
+          });
+          curDiv.appendChild(finalP);
           wi = words.length;
           continue;
         }
 
-        var breakAt = findBreakPoint(words, fitIndex + 1);
-        var splitAt = breakAt >= 0 ? breakAt : fitIndex;
-        cur += '<p>' + words.slice(wi, splitAt + 1).join(' ') + '</p>';
-        result.push(cur);
-        cur = '';
-        wi  = splitAt + 1;
+        // Taglio parziale: applica regola NO_EOL
+        var splitAt = fitIndex;
+        if (isNoEol(words[splitAt])) {
+          splitAt = Math.max(wi, splitAt - 1);
+        }
+
+        // Taglio parziale: applica regola punteggiatura forte/debole
+        // (preferisce tagliare dopo . ! ? ; ,)
+        var STRONG = /[.!?]$/;
+        var WEAK   = /[;,]$/;
+        var bestBreak = -1;
+        for (var j = splitAt; j >= wi; j--) {
+          if (STRONG.test(words[j])) { bestBreak = j; break; }
+        }
+        if (bestBreak === -1) {
+          for (var j = splitAt; j >= wi; j--) {
+            if (WEAK.test(words[j])) { bestBreak = j; break; }
+          }
+        }
+        if (bestBreak !== -1) splitAt = bestBreak;
+
+        var partP = document.createElement('p');
+        partP.textContent = words.slice(wi, splitAt + 1).join(' ');
+        Array.from(node.attributes).forEach(function(a) {
+          partP.setAttribute(a.name, a.value);
+        });
+        curDiv.appendChild(partP);
+        flushPage();
+        wi = splitAt + 1;
       }
     });
 
-    if (cur) result.push(cur);
-
-    // Rimuove la pagina misuratore
+    flushPage();
     track.removeChild(probe);
-    return result;
+    return pages;
   }
 
   // ── Carosello ─────────────────────────────────────────────────────────────
@@ -307,8 +350,6 @@ layout: default
     overlay.setAttribute('aria-hidden', 'false');
     enterFullscreen();
 
-    // FIX: aspetta più frame + timeout per Safari iOS
-    // dove la viewport si assesta dopo il fullscreen
     var rafCount = 0;
     function waitAndBuild() {
       rafCount++;
@@ -337,7 +378,7 @@ layout: default
   prevBtn.addEventListener('click', function() { goTo(current - 1); });
   nextBtn.addEventListener('click', function() { goTo(current + 1); });
 
-  // FIX: ricalcola al resize (barra indirizzi mobile che appare/sparisce)
+  // Ricalcola al resize (barra indirizzi mobile che appare/sparisce)
   var resizeTimer;
   window.addEventListener('resize', function() {
     if (!overlay.classList.contains('active')) return;
