@@ -55,29 +55,45 @@
       let isOpen = false;
       let contentTimer = null;
 
-      function toggleEgg() {
-        const area = document.getElementById('eggArea');
-        const label = document.getElementById('eggLabel');
+function toggleEgg() {
+  const area = document.getElementById('eggArea');
+  const label = document.getElementById('eggLabel');
+  const boxText = document.querySelector('.egg-box .egg-inner-text');
 
-      if (isOpen) {
-        isOpen = false;
-        area.classList.remove('open', 'animating', 'content-visible');
-        clearTimeout(contentTimer);
-        label.textContent = 'Mentre aspetti, puoi divertirti con questo uovo 🥚';
-      } else {
-        isOpen = true;
-        area.classList.add('open');
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            area.classList.add('animating');
-         });
-        });
-        contentTimer = setTimeout(() => {
-          area.classList.add('content-visible');
-          label.textContent = 'Mentre aspetti, puoi divertirti con questo uovo 🥚';
-       }, 700);
-      }
+  if (isOpen) {
+    isOpen = false;
+    area.classList.remove('open', 'animating', 'content-visible');
+    clearTimeout(contentTimer);
+    label.textContent = 'Mentre aspetti, puoi divertirti con questo uovo 🥚';
+  } else {
+    isOpen = true;
+    area.classList.add('open');
+    
+    // Genera un numero casuale da 0 a 99
+    const randomPercent = Math.floor(Math.random() * 100);
+    
+    if (randomPercent < 15) {
+      // 15% di probabilità (da 0 a 14)
+      boxText.innerHTML = 'È nato un pulcino! 🐣🐥';
+    } else if (randomPercent < 30) {
+      // 15% di probabilità (da 15 a 29)
+      boxText.innerHTML = 'Ops... è uscita una frittata! 🍳';
+    } else {
+      // 70% di probabilità (da 30 a 99)
+      boxText.innerHTML = 'Se ci provi mille volte, forse esce un anatroccolo, oppure una frittata!';
     }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        area.classList.add('animating');
+      });
+    });
+    contentTimer = setTimeout(() => {
+      area.classList.add('content-visible');
+      label.textContent = 'Mentre aspetti, puoi divertirti con questo uovo 🥚';
+    }, 700);
+  }
+}
 
     // Ricarica automaticamente la pagina non appena internet torna a funzionare
     window.addEventListener('online', () => {
