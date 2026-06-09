@@ -232,18 +232,7 @@ layout: null
     <main class="page-content" aria-label="Contenuto">
       <div class="wrapper">
         <h1 class="post-title">Sei offline!</h1>
-        <p>Il tuo dispositivo ha perso la connessione a internet. Non ti preoccupare, non hai perso nulla di quello che stavi facendo!</p>
-
-           <h3>Cosa puoi fare adesso?</h3>
-              <ul>
-                 <li><strong>Controlla il Wi-Fi o i dati:</strong> Verifica se il tuo telefono o computer è connesso alla rete.</li>
-                 <li><strong>Togli la modalità aereo:</strong> Assicurati di non averla attivata per sbaglio.</li>
-                 <li><strong>Aspetta un attimo:</strong> A volte basta spostarsi in una stanza dove c'è più campo.</li>
-              </ul>
-
-        <p>Non appena tornerà la linea, la pagina si aggiornerà da sola. Nel frattempo, puoi continuare a usare le sezioni dell'app che avevi già aperto prima!</p>
-        <p class="egg-label" id="eggLabel" onclick="toggleEgg()">Mentre aspetti, puoi divertirti con questo uovo 🥚</p>
-
+    <p class="egg-label" id="eggLabel" onclick="toggleEgg()">Mentre aspetti, puoi divertirti con questo uovo 🥚</p>
         <div class="egg-area" id="eggArea">
           <div class="egg-scene" id="eggScene" onclick="toggleEgg()">
             <div class="egg-wrapper">
@@ -260,6 +249,16 @@ layout: null
             </div>
           </div>
         </div>
+        
+        <p>Il tuo dispositivo ha perso la connessione a internet. Non ti preoccupare, non hai perso nulla di quello che stavi facendo!</p>
+           <h3>Cosa puoi fare adesso?</h3>
+              <ul>
+                 <li><strong>Controlla il Wi-Fi o i dati:</strong> Verifica se il tuo telefono o computer è connesso alla rete.</li>
+                 <li><strong>Togli la modalità aereo:</strong> Assicurati di non averla attivata per sbaglio.</li>
+                 <li><strong>Aspetta un attimo:</strong> A volte basta spostarsi in una stanza dove c'è più campo.</li>
+              </ul>
+
+        <p>Non appena tornerà la linea, la pagina si aggiornerà da sola. Nel frattempo, puoi continuare a usare le sezioni dell'app che avevi già aperto prima!</p>
       </div>
     </main>
     {%- include footer.html -%}
@@ -302,7 +301,7 @@ function toggleEgg() {
     });
     contentTimer = setTimeout(() => {
       area.classList.add('content-visible');
-      label.textContent = 'Mentre aspetti, puoi divertirti con questo uovo 🥚';
+      label.textContent = 'Per riprovarci clicca qui 🥚';
     }, 700);
   }
 }
