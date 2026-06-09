@@ -97,8 +97,10 @@ $slide-duration: 300ms;
   line-height: 32px;
   box-sizing: border-box;
 
-  p { margin-bottom: 32px; }
+  p { margin-bottom: 32px; text-wrap: pretty; }
 
+  h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+  
   hr {
     border: none;
     height: 2px;
@@ -109,16 +111,6 @@ $slide-duration: 300ms;
   hr.box-info-hr { background: $hr-info; }
   hr.box-nota-hr { background: $hr-nota; }
   hr.details-hr  { background: $hr-details; }
-}
-
-// ─── Ghost ────────────────────────────────────────────────────────────────
-#ghost {
-  position: fixed;
-  visibility: hidden;
-  pointer-events: none;
-  overflow: hidden;
-  top: 0;
-  left: 0;
 }
 
 // ─── Barra inferiore ──────────────────────────────────────────────────────
