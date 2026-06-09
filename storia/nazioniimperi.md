@@ -1,5 +1,7 @@
 ---
 title: Nazioni e imperi
+layout: book
+extra_css: [book.css]
 ---
 Dieci luglio 1797. A Reggio Emilia fa caldo, molto caldo. Non sai se trovi più insopportabile l'umidità della pianura padana o le zanzare che ti tormentano. La tua camicia è fatta di cotone inglese, un tessuto che un mercante livornese ha venduto a tua madre poche settimane fa e che è molto più comodo dei vestiti di canapa che portavi l'estate scorsa. Dovresti essere a letto già da mezz'ora: è sera, hai già cenato, ma hai ottenuto il permesso di restare all'aperto finché non suonerà il campanile della cattedrale.
 
