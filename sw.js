@@ -1,10 +1,10 @@
-const CACHE_NAME = 'quaderno-v8';
-
+const CACHE_NAME = 'quaderno-v9';
+const OFFLINE_URL = '/offline.html';
 self.addEventListener('install', event => {
   self.skipWaiting(); // attiva subito il nuovo SW senza aspettare
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(['/']);
+      return cache.addAll(['/', OFFLINE_URL]);
     })
   );
 });
@@ -23,9 +23,17 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        return caches.match(OFFLINE_URL);
+      })
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then(response => {
+        return response || fetch(event.request);
+      })
+    );
+  }
 });
