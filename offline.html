@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'it' }}">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}?v={{ site.version }}">
+  <link rel="stylesheet" href="{{ '/assets/homeroom.css' | relative_url }}">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" href="https://ilquadernodellaprof.github.io/assets/icons/icon-192.png">
+  <meta name="theme-color" content="#7a9e7e">
+  {%- feed_meta -%}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Righteous&display=swap" rel="stylesheet">
+</head>
+  <body class="{{ page.classe }}">
+    {%- include header.html -%}
+    <main class="page-content" aria-label="Contenuto">
+      <div class="wrapper">
+        <h1 class="post-title">Sei offline!</h1>
+        <p>Il tuo dispositivo ha perso la connessione a internet. Non ti preoccupare, non hai perso nulla di quello che stavi facendo!</p>
+
+           <h3>Cosa puoi fare adesso?</h3>
+              <ul>
+                 <li><strong>Controlla il Wi-Fi o i dati:</strong> Verifica se il tuo telefono o computer è connesso alla rete.</li>
+                 <li><strong>Togli la modalità aereo:</strong> Assicurati di non averla attivata per sbaglio.</li>
+                 <li><strong>Aspetta un attimo:</strong> A volte basta spostarsi in una stanza dove c'è più campo.</li>
+              </ul>
+
+        <p>Non appena tornerà la linea, la pagina si aggiornerà da sola. Nel frattempo, puoi continuare a usare le sezioni dell'app che avevi già aperto prima!</p>
+        <p class="egg-label" id="eggLabel" onclick="toggleEgg()">Mentre aspetti, puoi divertirti con questo uovo 🥚</p>
+
+        <div class="egg-area" id="eggArea">
+          <div class="egg-scene" id="eggScene" onclick="toggleEgg()">
+            <div class="egg-wrapper">
+              <div class="egg-top"></div>
+              <div class="egg-seam"></div>
+              <div class="egg-inner-text">incrocia le dita... 🤞</div>
+              <div class="egg-bottom"></div>
+            </div>
+          </div>
+   
+          <div class="egg-content">
+            <div class="egg-box">
+              <div class="egg-inner-text">Se ci provi mille volte, forse esce un anatroccolo, oppure una frittata!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    {%- include footer.html -%}
+    <script>
+      let isOpen = false;
+      let contentTimer = null;
+
+      function toggleEgg() {
+        const area = document.getElementById('eggArea');
+        const label = document.getElementById('eggLabel');
+
+      if (isOpen) {
+        isOpen = false;
+        area.classList.remove('open', 'animating', 'content-visible');
+        clearTimeout(contentTimer);
+        label.textContent = 'Mentre aspetti, puoi divertirti con questo uovo 🥚';
+      } else {
+        isOpen = true;
+        area.classList.add('open');
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            area.classList.add('animating');
+         });
+        });
+        contentTimer = setTimeout(() => {
+          area.classList.add('content-visible');
+          label.textContent = 'Mentre aspetti, puoi divertirti con questo uovo 🥚';
+       }, 700);
+      }
+    }
+
+    // Ricarica automaticamente la pagina non appena internet torna a funzionare
+    window.addEventListener('online', () => {
+      window.location.reload();
+    });
+    </script>
+  </body>
+</html>
