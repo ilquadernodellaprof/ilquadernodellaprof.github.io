@@ -99,7 +99,12 @@ layout: default
   // ── Spezzatura naturale ───────────────────────────────────────────────────
   function findBreakPoint(words, overflowIndex) {
     var STRONG = /[.!?]$/;
-    var WEAK   = /[;:,]$/;
+    var WEAK   = /[;,]$/;
+    var NO_EOL = ['il','lo','la','i','gli','le','l\'','un','un\'','una',
+                  'dei','delle','degli','dello','di','a','da','in','con',
+                  'su','per','tra','fra','ai','al','allo','alla','alle',
+                  'agli','dallo','dalla','dagli','dalle','dai','nel','nello',
+                  'nella','negli','nelle','nei','sul','sulla','e','che','si'];
     var limit  = Math.max(0, overflowIndex - 15);
     for (var i = overflowIndex - 1; i >= limit; i--) {
       if (STRONG.test(words[i])) return i;
@@ -107,7 +112,11 @@ layout: default
     for (var i = overflowIndex - 1; i >= limit; i--) {
       if (WEAK.test(words[i])) return i;
     }
-    return -1;
+    var splitAt = overflowIndex - 1;
+    if (NO_EOL.indexOf(words[splitAt].toLowerCase().replace(/[.,;:!?]$/, '')) !== -1) {
+      splitAt = Math.max(0, splitAt - 1);
+    }
+    return splitAt;
   }
 
   // ── Paginazione ───────────────────────────────────────────────────────────
@@ -146,8 +155,8 @@ layout: default
     });
 
     var nodes = Array.from(doc.body.firstChild.childNodes).filter(function(n) {
-      return n.outerHTML || n.textContent.trim();
-    });
+  return n.nodeType === 1;
+});
 
     // Crea una pagina misuratore reale nel track
     var probe = document.createElement('div');
