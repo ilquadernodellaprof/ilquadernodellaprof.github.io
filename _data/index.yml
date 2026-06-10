@@ -1,0 +1,9 @@
+rooms:
+  - id: 2B
+    color: notte
+    url: classe/2026-2b
+    sub: Italiano
+  - id: 2E
+    color: melanzana
+    url: classe/2026-2e
+    sub: Italiano · Storia · Geografia
