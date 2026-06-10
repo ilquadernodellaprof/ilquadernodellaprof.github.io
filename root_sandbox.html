@@ -1,0 +1,55 @@
+---
+layout: default
+title: Il Quaderno della Prof
+extra_css: [index.css]
+---
+  <img class="duck" src="https://ilquadernodellaprof.github.io/assets/icons/icon-512.png" alt="Paperella">
+  <h1>Ehi! Hai aperto il Quaderno della Prof!</h1>
+  <p>Entra in classe!</p>
+    <div class="bottoni">
+  {% for room in site.data.index.rooms %}
+  <a class="bottone bottone-{{ room.color }}" href="{{ room.url }}">
+    <span class="lettera">{{ room.id }}</span>
+    <span class="nome">{{ room.sub }}</span>
+  </a>
+  {% endfor %}
+            <!-- area ex alunni
+<div class="btn-alumni">
+  <a href="https://ilquadernodellaprof.github.io/about/#ex-alunni" class="btn-cuore">Area ex alunni ♡</a>
+</div> -->
+</div>
+    <div class="site-about" id="sa">
+  <button onclick="toggle('sa', 'sa-body')">
+    <span class="arrow">▸</span>
+    Che cos'è il quaderno della prof?
+  </button>
+  <div class="site-about-body" id="sa-body">
+    <p>Il quaderno della prof è un progetto didattico curato e gestito da Lucia Capurri. Contiene appunti, dispense e tante risorse per le sue classi. I materiali sono rilasciati con licenza CC-BY-NC, salvo dove diversamente indicato, e sono liberamente utilizzabili a scopo didattico. Per approfondire <a href="about/#professional">clicca qui</a>.</p>
+  </div>
+</div>
+<div class="pwa-about" id="pa">
+  <button onclick="toggle('pa', 'pa-body')">
+    <span class="arrow">▸</span>
+    Vuoi scaricare l'app sul telefono? Aprimi! 
+  </button>
+  <div class="pwa-about-body" id="pa-body">
+    <p>Su Android: tocca i tre puntini ⋮ in alto a destra e scegli "Aggiungi a schermata Home".<br>Su iPhone: tocca il pulsante di condivisione ↑ e scegli "Aggiungi a schermata Home".</p>
+  </div>
+</div>
+  <footer>
+    Icona di <a href="https://twitter.com/abbpandalyn?ref=svgrepo.com">Yan Liu</a> via <a href="https://www.svgrepo.com/">SVG Repo</a> - licenza CC Attribution.<br>
+    Font ad alta leggibilità: <a href="https://opendyslexic.org/">OpenDyslexic</a> di Abbie Gonzalez.
+            <div class="footer-links">
+        <a href="https://ilquadernodellaprof.github.io/about" class="card-about">Chi sono</a>
+        <a href="https://ilquadernodellaprof.github.io/about#contatti" class="card-contatti">Contatti</a>
+        <a href="/privacy" class="card-about card-privacy">Privacy</a></div>
+  </footer>
+    <script>
+  function toggle(elId, bodyId) {
+    const el = document.getElementById(elId);
+    const body = document.getElementById(bodyId);
+    const isOpen = el.classList.contains('open');
+    body.style.maxHeight = isOpen ? '0' : body.scrollHeight + 'px';
+    el.classList.toggle('open');
+  }
+</script>
