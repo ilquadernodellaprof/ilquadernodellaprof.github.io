@@ -8,5 +8,6 @@ Appena posso ti manderò una risposta all'indirizzo e-mail che hai scritto nel m
 
 <div class="box-info">
 <strong>⚠️ Controlla bene la posta!</strong><br>
-La risposta potrebbe arrivare nella cartella <strong>Spam</strong> o <strong>Posta indesiderata</strong>, non solo nella Posta in arrivo. 
+La mia risposta arriverà alla tua e-mail, non qui sul sito. <br>
+Fai attenzione: potrebbe arrivare nella cartella <strong>Spam</strong> o <strong>Posta indesiderata</strong>, non solo nella Posta in arrivo. 
 </div>
