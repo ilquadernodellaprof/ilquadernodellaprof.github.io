@@ -2,9 +2,11 @@
 title: Messaggio inviato
 ---
 
-# Grazie!
+# Grazie per il messaggio!
 
-Il tuo messaggio è stato inviato. Ti risponderò appena possibile.
+Appena posso ti manderò una risposta all'indirizzo e-mail che hai scritto nel modulo.
 
-<div class="box-info box-nota">
-Ricordati di controllare la tua email per leggere la risposta! </div>
+<div class="box-info">
+<strong>⚠️ Controlla bene la posta!</strong><br>
+La risposta potrebbe arrivare nella cartella <strong>Spam</strong> o <strong>Posta indesiderata</strong>, non solo nella Posta in arrivo. 
+</div>
