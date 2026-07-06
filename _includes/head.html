@@ -3,27 +3,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
+
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}?v={{ site.version }}">
+  {% if page.layout == 'homeroom' %}
+    <link rel="stylesheet" href="{{ '/assets/homeroom.css' | relative_url }}?v={{ site.version }}">
+  {% endif %}
+  {% for css in page.extra_css %}
+    <link rel="stylesheet" href="{{ '/assets/' | append: css | relative_url }}?v={{ site.version }}">
+  {% endfor %}
+
   <link rel="manifest" href="/manifest.json">
-  <link rel="icon" type="image/png" href="https://ilquadernodellaprof.github.io/assets/icons/icon-192.png">
+  <link rel="icon" type="image/png" href="{{ '/assets/icons/icon-192.png' | relative_url }}">
   <meta name="theme-color" content="#7a9e7e">
   {%- feed_meta -%}
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Righteous&display=swap" rel="stylesheet">
+
   <script>
     if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(registrations => {
-    registrations.forEach(reg => reg.unregister());
-  }).then(() => {
-    navigator.serviceWorker.register('/sw.js');
-  });
-}
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(reg => reg.unregister());
+      }).then(() => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
   </script>
-  {% if page.layout == 'homeroom' %}
-    <link rel="stylesheet" href="{{ '/assets/homeroom.css' | relative_url }}">
-  {% endif %}
-  {% for css in page.extra_css %}
-    <link rel="stylesheet" href="{{ '/assets/' | append: css | relative_url }}">
-  {% endfor %}
 </head>
