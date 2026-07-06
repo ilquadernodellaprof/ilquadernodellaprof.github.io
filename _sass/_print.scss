@@ -1,0 +1,31 @@
+// ─── Stampa ───────────────────────────────
+@media print {
+  [role="banner"],
+  .footer-col-wrapper,
+  .footer-heading,
+  .footer-inner,
+  .page-controls,
+  .btn-torna {
+    display: none !important;
+  }
+  .page-content {
+    background-image: none;
+  }
+  .site-header {
+    margin: 0;
+    border-radius: 0;
+  }
+  .site-footer::after {
+    content: "Contenuto curato da Lucia Capurri, distribuito con licenza CC-BY-NC a scopo didattico. Fonte: ilquadernodellaprof.github.io";
+    display: block;
+    text-align: center;
+    font-size: 10pt;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+  body, .post-header, .wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
