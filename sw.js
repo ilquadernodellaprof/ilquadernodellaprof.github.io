@@ -1,4 +1,4 @@
-const CACHE_NAME = 'quaderno-v9';
+const CACHE_NAME = 'quaderno-v10';
 const OFFLINE_URL = '/offline.html';
 self.addEventListener('install', event => {
   self.skipWaiting(); // attiva subito il nuovo SW senza aspettare
