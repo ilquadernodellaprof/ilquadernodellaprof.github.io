@@ -13,3 +13,5 @@ Personal teaching website by Lucia Capurri, a middle school teacher of Italian, 
 Collects notes, handouts and materials for her classes.
 
 👉 [Visit the site](https://ilquadernodellaprof.github.io/)
+
+This project is tested with BrowserStack.
