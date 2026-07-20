@@ -4,7 +4,7 @@ The source code is licensed under the GNU General Public License v3.0 (GPL-3.0).
 
 All non-code content is licensed under CC BY-NC-SA 4.0, unless otherwise specified.
 
-See [LICENSE.md](LICENSE.md) for details.
+See [LICENSES.md](LICENSES.md) for details.
 
 
 # Il Quaderno della Prof
