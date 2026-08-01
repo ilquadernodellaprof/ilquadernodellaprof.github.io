@@ -1,5 +1,5 @@
-title: Il Quaderno della Prof
-description: Questo sito è creato e gestito da Lucia Capurri e i contenuti presenti si intendono liberamente disponibili con licenza CC-BY-NC, a scopo didattico.
+title: Il vecchio Quaderno della Prof
+description: Questo sito si è trasferito su ilquadernodellaprof.it.
 lang: it
 defaults:
   - scope:
@@ -7,7 +7,7 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-version: "10.0"
+version: "11.0"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
