@@ -135,8 +135,10 @@ layout: null
       line-height: 1.5;
       margin-top: 2rem;
     }
-    footer a { color: #9ec4a0; }
+    footer a { color: #3d6bb5; }
     .footer-links { font-size: 1rem; margin-bottom: 0.8rem; }
+    .transfer { margin-bottom: 1rem; font-size: 1.1rem; color: #2d2d2d; }
+    .transfer a { color: #3d6bb5; text-decoration: underline; }
   </style>
   <script>
     if ('serviceWorker' in navigator) {
@@ -150,8 +152,13 @@ layout: null
 </head>
 <body>
   <img class="duck" src="/assets/icons/icon-512.png" alt="Paperella">
-  <h1>Ehi! Hai aperto il Quaderno della Prof!</h1>
-  <p>Buone vacanze!</p>
+  <h1>Ehi... ma questo è il vecchio Quaderno della Prof!</h1>
+  <p class="transfer">
+    Il Quaderno della Prof si è trasferito. <br>
+    Il nuovo sito si chiama <a href="https://ilquadernodellaprof.it/" 
+   onclick="if(/android/i.test(navigator.userAgent)){ event.preventDefault(); window.location.href='intent://ilquadernodellaprof.it/#Intent;scheme=https;end;'; }">ilquadernodellaprof.it</a><br>
+    Vai sul nuovo sito e scarica la nuova app da lì!
+  </p>
   <div class="bottoni">
     {% for room in site.data.index.rooms %}
     <a class="bottone bottone-{{ room.color }}" href="{{ room.url }}">
@@ -159,50 +166,12 @@ layout: null
       <span class="nome">{{ room.sub }}</span>
     </a>
     {% endfor %}
-    <!-- area ex alunni
-    <div class="btn-alumni">
-      <a href="/about/#ex-alunni" class="btn-cuore">Area ex alunni ♡</a>
-    </div> -->
-  </div>
-  <div class="site-about" id="sa">
-    <button onclick="toggle('sa', 'sa-body')">
-      <span class="arrow">&#9658;</span>
-      Che cos'è il quaderno della prof?
-    </button>
-    <div class="site-about-body" id="sa-body">
-  <p>Il <strong>Quaderno della Prof</strong> è un progetto didattico curato e gestito da Lucia Capurri. Contiene appunti, dispense e tante risorse per le sue classi.</p> 
-  <p>I materiali sono rilasciati con licenza <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it"><strong>CC BY-NC-SA</strong></a>, salvo dove diversamente indicato, e sono liberamente utilizzabili a scopo didattico.</p>
-  <p>Per approfondire metodologia, bibliografia e licenza <a href="/about/#professional">clicca qui</a>.</p>
-</div>
-  </div>
-  <div class="pwa-about" id="pa">
-    <button onclick="toggle('pa', 'pa-body')">
-      <span class="arrow">&#9658;</span>
-      Vuoi scaricare l'app sul telefono? Aprimi!
-    </button>
-    <div class="pwa-about-body" id="pa-body">
-  <p><strong>Su Android:</strong> tocca i tre puntini &#8942; in alto a destra e scegli <em>"Aggiungi a schermata Home"</em>.<br>
-  <strong>Su iPhone:</strong> tocca il pulsante di condivisione &#8593; e scegli <em>"Aggiungi a schermata Home"</em>.</p>
-</div>
   </div>
   <footer>
-      <div class="footer-links">
-      <a href="/about" class="card-about">Chi sono</a>
-      <a href="/about#contatti" class="card-contatti">Contatti</a>
-      <a href="/privacy" class="card-about card-privacy">Privacy</a>
-    </div>
     © 2026 Lucia Capurri - CC BY-NC-SA<br>
-    Icona di <a href="https://twitter.com/abbpandalyn?ref=svgrepo.com">Yan Liu</a> via <a href="https://www.svgrepo.com/">SVG Repo</a> - licenza CC Attribution.<br>
-    Font ad alta leggibilità: <a href="https://opendyslexic.org/">OpenDyslexic</a> di Abbie Gonzalez.
+    <a href="https://ilquadernodellaprof.it/" 
+   onclick="if(/android/i.test(navigator.userAgent)){ event.preventDefault(); window.location.href='intent://ilquadernodellaprof.it/#Intent;scheme=https;end;'; }">Visita il nuovo sito: ilquadernodellaprof.it</a><br>
+    Icona di Yan Liu via <a href="https://www.svgrepo.com/">SVG Repo</a> - licenza CC Attribution.
   </footer>
-  <script>
-    function toggle(elId, bodyId) {
-      const el = document.getElementById(elId);
-      const body = document.getElementById(bodyId);
-      const isOpen = el.classList.contains('open');
-      body.style.maxHeight = isOpen ? '0' : body.scrollHeight + 'px';
-      el.classList.toggle('open');
-    }
-  </script>
 </body>
 </html>
