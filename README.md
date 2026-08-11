@@ -1,14 +1,9 @@
-The source code is licensed under the GNU General Public License v3.0 (GPL-3.0).
-
-All non-code content is licensed under CC BY-NC-SA 4.0, unless otherwise specified.
-
-See [LICENSES.md](LICENSES.md) for details.
-
-
 # Il Quaderno della Prof
 
-**Il Quaderno della Prof** is the personal teaching website of Lucia Capurri, a middle school teacher of Italian, history, and geography in the province of Savona, Italy.
+**Il Quaderno della Prof** is my EdTech Project and Teaching Hub.
 
-This repository will contain the source code for the site templates and tools (including the Whiteboard Application and BookReader mode).
+This repository contains a legacy site built with Jekyll. It is kept online to allow my pupils a smooth transition to the new live site.
 
-The [live site](https://ilquadernodellaprof.it) is built with Eleventy. A simpler sample version, configured with Jekyll for easier maintenance, is available [here](https://ilquadernodellaprof.github.io/) and shared as-is.
+⚠️ **Note:** This repository will be archived by January 2027 at the latest.
+
+👉 Visit the **[live site](https://ilquadernodellaprof.it)**.
