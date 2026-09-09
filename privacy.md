@@ -5,11 +5,7 @@ classe: fiordaliso
 
 Questa pagina descrive come vengono trattati i dati personali degli utenti che visitano questo sito o compilano il modulo di contatto. 
 
-<blockquote>
-  
-Aggiunta di **prova** da cancellare
-
-</blockquote>
+> Non dovresti trovarti qui: questo sito è dismesso. Raccomando di andare su [ilquadernodellaprof.it](https://ilquadernodellaprof.it/)
 
 ## Titolare del trattamento
 
