@@ -3,7 +3,7 @@ title: Informativa sulla privacy
 classe: fiordaliso
 ---
 
-Questa pagina descrive come vengono trattati i dati personali degli utenti che visitano questo sito o compilano il modulo di contatto.
+Questa pagina descrive come vengono trattati i dati personali degli utenti che visitano questo sito o compilano il modulo di contatto. <span>Aggiunta di **prova** da cancellare</span>
 
 ## Titolare del trattamento
 
