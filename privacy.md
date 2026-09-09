@@ -6,7 +6,9 @@ classe: fiordaliso
 Questa pagina descrive come vengono trattati i dati personali degli utenti che visitano questo sito o compilano il modulo di contatto. 
 
 <blockquote>
+  
 Aggiunta di **prova** da cancellare
+
 </blockquote>
 
 ## Titolare del trattamento
