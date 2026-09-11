@@ -25,4 +25,4 @@ Lucia
 
 - Trovate la mia email su [ilquadernodellaprof.it](https://ilquadernodellaprof.it/about/scrivimi)
 - Sui social sono [@teach.cia](https://www.instagram.com/teach.cia)
-- Le vostre vecchie pagine classe rimarranno online, per permettervi di rivedere del materiale, se ne avrete bisogno: [**classe 2E**](https://ilquadernodellaprof.it/classe/2026-2e) &middot [**classe 2B**](https://ilquadernodellaprof.it/classe/2026-2b)
+- Le vostre vecchie pagine classe rimarranno online, per permettervi di rivedere del materiale, se ne avrete bisogno: [**classe 2E**](https://ilquadernodellaprof.it/classe/2026-2e) - [**classe 2B**](https://ilquadernodellaprof.it/classe/2026-2b)
